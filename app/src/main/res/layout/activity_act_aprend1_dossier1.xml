@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dossier_tres"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondo">
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:text="@string/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="#2fc8d9"
+        android:textColor="#330099"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <Button
+        android:id="@+id/btnVerLogros"
+        android:text="@string/btnVerLogros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@android:color/holo_blue_light"
+        android:textColor="#330099"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <Button
+        android:id="@+id/btnVerPerfil"
+        android:text="@string/btnVerPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@android:color/holo_blue_light"
+        android:textColor="#330099"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/btnVerDossiers"
+        />
+
+    <Button
+        android:id="@+id/btnVerDossiers"
+        android:text="@string/btnVerDossiers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="#2fc8d9"
+        android:textColor="#330099"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/btnVerLogros"
+        />
+
+    <TextView
+        android:id="@+id/lblDossier3"
+        android:text="@string/lblDossier1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="22sp"
+        android:textColor="#0066CC"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnSalir"
+        android:layout_alignParentStart="true"
+        />
+
+    <Button
+        android:id="@+id/btnAtras"
+        android:text="@string/btnAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="#7be9ff"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/lblActAprend11"
+        android:text="@string/lblActAprend11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/lblActAprend1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnActAp1Do1_1"
+        android:text="@string/btnActAp1Do1_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@color/colorPrimaryDark"
+        android:textColor="#330099"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/lblActAprend11"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnActAp1Do1_2"
+        android:text="@string/btnActAp1Do1_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@color/colorPrimaryDark"
+        android:textColor="#330099"
+        android:layout_alignBaseline="@+id/btnActAp1Do1_1"
+        android:layout_alignBottom="@+id/btnActAp1Do1_1"
+        android:layout_toEndOf="@+id/btnActAp1Do1_1" />
+
+    <Button
+        android:id="@+id/btnActAp1Do1_3"
+        android:text="@string/btnActAp1Do1_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@color/colorPrimaryDark"
+        android:textColor="#330099"
+        android:layout_alignBaseline="@+id/btnActAp1Do1_2"
+        android:layout_alignBottom="@+id/btnActAp1Do1_2"
+        android:layout_toStartOf="@+id/btnSalir"
+        android:layout_marginEnd="12dp" />
+
+    <Button
+        android:id="@+id/btnActAp1Do1_6"
+        android:text="@string/btnActAp1Do1_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@color/colorPrimaryDark"
+        android:textColor="#330099"
+        android:layout_alignBaseline="@+id/btnActAp1Do1_5"
+        android:layout_alignBottom="@+id/btnActAp1Do1_5"
+        android:layout_toEndOf="@+id/btnActAp1Do1_5" />
+
+    <Button
+        android:id="@+id/btnActAp1Do1_5"
+        android:text="@string/btnActAp1Do1_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@color/colorPrimaryDark"
+        android:textColor="#330099"
+        android:layout_below="@+id/btnActAp1Do1_2"
+        android:layout_toEndOf="@+id/btnActAp1Do1_4"
+        android:layout_marginTop="47dp" />
+
+    <Button
+        android:id="@+id/btnActAp1Do1_4"
+        android:text="@string/btnActAp1Do1_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Button"
+        tools:background="@color/colorPrimaryDark"
+        android:textColor="#330099"
+        android:layout_alignBaseline="@+id/btnActAp1Do1_5"
+        android:layout_alignBottom="@+id/btnActAp1Do1_5"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/lbl17"
+        android:text="@string/lbl17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="40sp"
+        android:textColor="@android:color/holo_purple"
+        android:layout_alignBottom="@+id/btnActAp1Do1_3"
+        android:layout_toEndOf="@+id/btnActAp1Do1_6" />
+
+    <TextView
+        android:id="@+id/lbl5"
+        android:text="@string/lbl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="40sp"
+        android:textColor="@android:color/holo_purple"
+        android:layout_alignBottom="@+id/btnActAp1Do1_6"
+        android:layout_alignEnd="@+id/lbl17" />
+
+    <TextView
+        android:id="@+id/lblActAprend1"
+        android:text="@string/lblActAprend1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="17sp"
+        android:textColor="#0066CC"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/lblDossier3"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

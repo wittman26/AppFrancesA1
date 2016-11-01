@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">App Frances A1</string>
+
+    <!--lbl-->
+    <string name="lblTituloMain">FRANCES A1</string>
+    <string name="lblTextoIngresar">Ingrese para acceder a contenidos</string>
+    <string name="lblRegistrar">Registrar</string>
+    <string name="lblTieneCuenta">Ya tiene una cuenta?</string>
+    <string name="lblBienvenido">Bienvenido</string>
+    <string name="lblTituloPerfil">PERFIL</string>
+    <string name="lblNombreUsuario">Nombre de usuario</string>
+    <string name="lblEmail">Email</string>
+    <string name="lblContrasena">Contraseña</string>
+    <string name="lblTituloLogros">Logros</string>
+    <string name="lblPuntaje">+Puntaje:</string>
+    <string name="lblPuntajeFalta">-Falta:</string>
+    <string name="lblTituloDossiers">Dossiers du livre Alter Ego A1</string>
+    <string name="lblDossier1">Dossier un</string>
+    <string name="lblDossier2">Dossier deux</string>
+    <string name="lblDossier3">Dossier trois</string>
+    <string name="lblDossier4">Dossier quatre</string>
+    <string name="lblDossier5">Dossier cinq</string>
+    <string name="lbltxtDossier1">Les uns, les autres...</string>
+    <string name="lbltxtDossier2">Ici / ailleurs</string>
+    <string name="lbltxtDossier3">Dis moi qui tu es</string>
+    <string name="lbltxtDossier4">Une journée particuliere</string>
+    <string name="lbltxtDossier5">activité un</string>
+    <string name="lblActAprend1">Activité 1</string>
+    <string name="lblActAprend11">Identifier un nombre</string>
+    <string name="lbl17"> 17 </string>
+    <string name="lbl5"> 5 </string>
+    <string name="lblActAprend2">Activité 2</string>
+    <string name="lblActAprend3">Activité 3</string>
+    <string name="lblActAprend4">Activité 4</string>
+
+    <!--Btn-->
+    <string name="btnCrearPerfil">Crear Perfil</string>
+    <string name="btnIniciarSesion">Iniciar Sesión</string>
+    <string name="btnIngresar">Ingresar</string>
+    <string name="btnRegistrar">Registrar</string>
+    <string name="btnVerDossiers">Ver Dossiers</string>
+    <string name="btnVerLogros">Ver Logros</string>
+    <string name="btnVerPerfil">Ver Perfil</string>
+    <string name="btnSalir">Salir</string>
+    <string name="btnModificarPerfil">Modificar Perfil</string>
+    <string name="btnEliminarPerfil">Eliminar Perfil</string>
+    <string name="btnAdelante">Adelante</string>
+    <string name="btnAtras">Atrás</string>
+    <string name="btnDossier1">Dossier un</string>
+    <string name="btnDossier2">Dossier deux</string>
+    <string name="btnDossier3">Dossier trois</string>
+    <string name="btnDossier4">Dossier quatre</string>
+    <string name="btnDossier5">Dossier cinq</string>
+    <string name="btnAct1">Activité un</string>
+    <string name="btnAct2">Activité deux</string>
+    <string name="btnAct3">Activité trois</string>
+    <string name="btnAct4">Activité quatre</string>
+
+    <!--txt-->
+    <string name="txtUsuario">Usuario</string>
+    <string name="txtContrasena">Contraseña</string>
+    <string name="txtNombreUsuario">Nombre de usuario</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtConfirmarContrasena">Confirmar contraseña</string>
+
+    <!--Btn   -  Actividades de aprendizaje-->
+    <!--Btn   -  Dossier 1 Act 1-->
+    <string name="btnActAp1Do1_1">dix-sept</string>
+    <string name="btnActAp1Do1_2"> dix et sept</string>
+    <string name="btnActAp1Do1_3">dixsepte</string>
+    <string name="btnActAp1Do1_4">un</string>
+    <string name="btnActAp1Do1_5">cinq</string>
+    <string name="btnActAp1Do1_6">sept</string>
+    <string name="btnActAp1Do1_7"> vingt et un</string>
+    <string name="btnActAp1Do1_8">vingt</string>
+    <string name="btnActAp1Do1_9">dix</string>
+
+    <!--Img-->
+
+
+</resources>
