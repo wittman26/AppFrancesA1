@@ -72,29 +72,17 @@
         android:layout_alignParentStart="true"
         />
 
-    <Button
-        android:id="@+id/btnAct2"
-        android:text="@string/btnAct2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#a1a4f6"
-        android:textColor="#330099"
-        android:layout_alignBaseline="@+id/btnAct1"
-        android:layout_alignBottom="@+id/btnAct1"
-        android:layout_alignParentEnd="true" />
+
 
     <Button
-        android:id="@+id/btnAct1"
-        android:text="@string/btnAct1"
+        android:id="@+id/btnAtras"
+        android:text="@string/btnAtras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@android:style/Widget.Button"
-        tools:background="#a1a4f6"
-        android:textColor="#330099"
-        android:layout_marginTop="88dp"
-        android:layout_below="@+id/lblDossier1"
-        android:layout_alignStart="@+id/btnAct3" />
+        tools:background="#7be9ff"
+        android:textColor="@color/colorPrimaryDark"
+        />
 
     <TextView
         android:id="@+id/lbltxtDossier1"
@@ -108,37 +96,22 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="11dp" />
 
-    <Button
-        android:id="@+id/btnAtras"
-        android:text="@string/btnAtras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#7be9ff"
-        android:textColor="@color/colorPrimaryDark"
-        />
 
-    <Button
-        android:id="@+id/btnAct4"
-        android:text="@string/btnAct4"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#a1a4f6"
-        android:textColor="#330099"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/btnAct2"
-        android:layout_alignStart="@+id/btnAct2" />
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/lbltxtDossier1"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scrBotonesActivi">
+        <LinearLayout
+            android:id="@+id/linBotonesActivi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnAct3"
-        android:text="@string/btnAct3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#a1a4f6"
-        android:textColor="#330099"
-        android:layout_alignTop="@+id/btnAct4"
-        android:layout_centerHorizontal="true" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

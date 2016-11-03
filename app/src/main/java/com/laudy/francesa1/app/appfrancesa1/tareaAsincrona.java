@@ -119,7 +119,7 @@ public class tareaAsincrona extends AsyncTask<parametrosURL, Void, String> {
 
 
         } catch (Exception e) {
-            resultado = e.getMessage();
+            resultado = e.getStackTrace().toString();
         }
 
         return resultado;

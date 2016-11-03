@@ -11,7 +11,6 @@
     tools:context="com.laudy.francesa1.app.appfrancesa1.VerDossiers"
     android:background="@drawable/pantalla_principal">
 
-
     <Button
         android:id="@+id/btnSalir"
         android:text="@string/btnSalir"
@@ -60,45 +59,6 @@
         android:layout_toEndOf="@+id/btnVerLogros"
         />
 
-    <Button
-        android:id="@+id/btnDossier2"
-        android:text="@string/btnDossier2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#FF9966"
-        android:textColor="#330099"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="180dp"
-        />
-
-    <Button
-        android:id="@+id/btnDossier4"
-        android:text="@string/btnDossier4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#f1bc87"
-        android:textColor="#330099"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="320dp"
-        />
-
-    <Button
-        android:id="@+id/btnDossier5"
-        android:text="@string/btnDossier5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#8888d8"
-        android:textColor="#330099"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="390dp"
-        />
-
     <TextView
         android:id="@+id/lblTituloDossiers"
         android:text="@string/lblTituloDossiers"
@@ -111,29 +71,20 @@
         android:layout_below="@+id/btnSalir"
         android:layout_alignParentStart="true"
         />
-
-    <Button
-        android:id="@+id/btnDossier3"
-        android:text="@string/btnDossier3"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#8ef6f6"
-        android:textColor="#330099"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/btnDossier2"
-        android:layout_alignEnd="@+id/btnDossier4" />
-
-    <Button
-        android:id="@+id/btnDossier1"
-        android:text="@string/btnDossier1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#a1a4f6"
-        android:textColor="#330099"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/lblTituloDossiers"
-        android:layout_alignStart="@+id/btnDossier4" />
+        android:layout_alignParentStart="true"
+        android:id="@+id/scrBotonesDossier">
+        <LinearLayout
+            android:id="@+id/linBotonesDossier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>

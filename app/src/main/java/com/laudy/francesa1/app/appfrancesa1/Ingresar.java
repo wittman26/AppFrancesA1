@@ -50,23 +50,35 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, resp
 
             //Evento btn Registrar
             case R.id.btnIngresar:
-                try {
-                    tareaAsincrona tarea =new tareaAsincrona(this);
-                    tarea.delegar = this;
+                if(validarCampos()) {
+                    try {
+                        tareaAsincrona tarea = new tareaAsincrona(this);
+                        tarea.delegar = this;
 
-                    //Prepara los parámetros de envío
-                    Map<String,String> parame = new TreeMap<>();
-                    parame.put("usuario",txtUsuario.getText().toString());
-                    parame.put("password",txtContrasena.getText().toString());
+                        //Prepara los parámetros de envío
+                        Map<String, String> parame = new TreeMap<>();
+                        parame.put("usuario", txtUsuario.getText().toString());
+                        parame.put("password", txtContrasena.getText().toString());
 
-                    parametrosURL params = new parametrosURL(constantes.LOGIN,parame);
-                    tarea.execute(params);
-                } catch (Exception e) {
-                    Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
+                        parametrosURL params = new parametrosURL(constantes.LOGIN, parame);
+                        tarea.execute(params);
+                    } catch (Exception e) {
+                        Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Ingrese usuario y contraseña", Toast.LENGTH_LONG).show();
                 }
 
                 break;
         }
+    }
+
+    private boolean validarCampos(){
+        boolean resultado = true;
+        if(txtUsuario.getText().length()==0) {txtUsuario.setError("Ingrese su usuario");resultado=false;}
+        if(txtContrasena.getText().length()==0) {txtContrasena.setError("Ingrese la contraseña");resultado=false;}
+
+        return resultado;
     }
 
     @Override
