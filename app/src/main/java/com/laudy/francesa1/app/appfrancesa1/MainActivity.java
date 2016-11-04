@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     //Declaro variables
     Button btnIniciarSesion;
     Button btnCrearPerfil;
+    String prueba = "ça été trés télè";
 
 
     @Override

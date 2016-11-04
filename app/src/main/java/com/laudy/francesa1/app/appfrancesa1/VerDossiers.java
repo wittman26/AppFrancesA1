@@ -11,12 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.laudy.francesa1.app.appfrancesa1.DTO.Dossier;
-import com.laudy.francesa1.app.appfrancesa1.DTO.Usuario;
+import com.laudy.francesa1.app.appfrancesa1.DTO.Pregunta;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -29,6 +30,7 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
     Button btnVerPerfil;
     Dossier dossierAux = new Dossier();
     private Map<Integer, Dossier> auxiliar = new TreeMap<>();
+    private List<Dossier> dossiersEnviar = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +123,7 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
             public void onClick(View v)
             {
 //                Toast.makeText(getApplicationContext(), " Listener botón " + v.getId(), Toast.LENGTH_SHORT).show();
-                Intent actividades = new Intent(v.getContext(), DossierUno.class);
+                Intent actividades = new Intent(v.getContext(), VerActAprend.class);
                 actividades.putExtra(constantes.IDDOSSIER, v.getId());
                 //Envía datos extra
                 actividades.putExtra("prueba", auxiliar.get(v.getId()).getNombredossier());

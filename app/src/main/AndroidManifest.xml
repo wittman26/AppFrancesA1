@@ -51,11 +51,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".DossierUno" />
+        <activity android:name=".VerActAprend" />
         <activity android:name=".DossierDos" />
         <activity android:name=".DossierCuatro" />
         <activity android:name=".DossierCinco" />
-        <activity android:name=".ActAprend1Dossier1" />
+        <activity android:name=".VerPreguntas" />
         <activity android:name=".DossierTres" />
         <activity android:name=".Ingresar">
             <intent-filter>

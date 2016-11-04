@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -12,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.laudy.francesa1.app.appfrancesa1.DTO.ActAprend;
-import com.laudy.francesa1.app.appfrancesa1.DTO.Dossier;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,7 +19,7 @@ import org.json.JSONObject;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class DossierUno extends AppCompatActivity implements View.OnClickListener, respuestaAsincrona {
+public class VerActAprend extends AppCompatActivity implements View.OnClickListener, respuestaAsincrona {
 
     //Declaro variables
     ////////////////Button btnSalir;
@@ -29,42 +27,29 @@ public class DossierUno extends AppCompatActivity implements View.OnClickListene
     Button btnVerLogros;
     Button btnVerDossiers;
     Button btnVerPerfil;
-    Button btnAct1;
-    //Button btnAct2;
-    //Button btnAct3;
-    //Button btnAct4;
-    //Button btnAct5;
+
+    private String iddossier ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dossier_uno);
+        setContentView(R.layout.activity_ver_act_aprend);
 
         //Mapeo (Prepara btn para escuchar click)
         btnVerLogros=(Button) findViewById(R.id.btnVerLogros);
         btnVerDossiers=(Button) findViewById(R.id.btnVerDossiers);
         btnVerPerfil=(Button) findViewById(R.id.btnVerPerfil);
-//        btnAct1=(Button) findViewById(R.id.btnAct1);
         linBotonesActivi = (LinearLayout)findViewById(R.id.linBotonesActivi);
-        //btnAct2=(Button) findViewById(R.id.btnAct2);
-        //btnAct3=(Button) findViewById(R.id.btnAct3);
-        //btnAct4=(Button) findViewById(R.id.btnAct4);
-        //btnAct5=(Button) findViewById(R.id.btnAct5);
 
         //(Escucha click)
         btnVerLogros.setOnClickListener(this);
         btnVerDossiers.setOnClickListener(this);
         btnVerPerfil.setOnClickListener(this);
-//        btnAct1.setOnClickListener(this);
-        //btnAct2.setOnClickListener(this);
-        //btnAct3.setOnClickListener(this);
-        //btnAct4.setOnClickListener(this);
-        //btnAct5.setOnClickListener(this);
 
         //Recibe parámetros de pantalla anterior
         Intent intent = getIntent(); //Almacena el intent
         Bundle extras = intent.getExtras(); //Extra enviado
-        String iddossier ="";
+//        String iddossier ="";
 
         if(extras != null){
             iddossier = String.valueOf(extras.getInt(constantes.IDDOSSIER));
@@ -111,7 +96,7 @@ public class DossierUno extends AppCompatActivity implements View.OnClickListene
                 startActivity(intentVerPerfil);
                 break;
             case R.id.btnAct1:
-                Intent intentActiv1 = new Intent(this, ActAprend1Dossier1.class);
+                Intent intentActiv1 = new Intent(this, VerPreguntas.class);
                 startActivity(intentActiv1);
                 break;
         }
@@ -178,10 +163,12 @@ public class DossierUno extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(getApplicationContext(), " Listener botón " + v.getId(), Toast.LENGTH_SHORT).show();
-//                Intent intentPrincipalMenu = new Intent(this, PrincipalMenu.class);
-//                intentPrincipalMenu.putExtra(constantes.USUARIO, usuarioLogeado.getNombreUsuario());
-//                startActivity(intentPrincipalMenu);
+//                Toast.makeText(getApplicationContext(), " Listener botón " + v.getId(), Toast.LENGTH_SHORT).show();
+                Intent intentVerPreguntas = new Intent(v.getContext(), VerPreguntas.class);
+                intentVerPreguntas.putExtra(constantes.IDACTAPREND, v.getId());
+                intentVerPreguntas.putExtra(constantes.IDDOSSIER, iddossier);
+//                intentVerPreguntas.putExtra(constantes.USUARIO, usuarioLogeado.getNombreUsuario());
+                startActivity(intentVerPreguntas);
             }
         });
     }

@@ -15,6 +15,11 @@ public class constantes {
     public static final String NUEVO_USUARIO = SERVIDOR + "/nuevousuario.php";
     public static final String DOSSIERS = SERVIDOR + "/dossiers.php";
     public static final String ACTAPREND = SERVIDOR + "/actividades.php";
+    public static final String PREGUNTAS = SERVIDOR + "/preguntas.php";
+
+    public static final String IMAGENES = SERVIDOR + "/images/";
+    //Nombre de parámetros
     public static final String USUARIO = "USUARIO";
     public static final String IDDOSSIER = "IDDOSSIER";
+    public static final String IDACTAPREND = "IDACTAPREND";
 }
