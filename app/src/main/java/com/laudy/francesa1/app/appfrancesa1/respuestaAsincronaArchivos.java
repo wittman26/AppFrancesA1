@@ -6,6 +6,6 @@ import android.graphics.Bitmap;
  * Created by Equipo 2 on 03/11/2016.
  */
 
-public interface respuestaAsincronaArchivos {
+public interface RespuestaAsincronaArchivos {
     void traerResultadosArchivos(Bitmap resultado);
 }

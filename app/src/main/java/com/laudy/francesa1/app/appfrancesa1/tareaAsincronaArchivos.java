@@ -5,7 +5,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -15,15 +14,15 @@ import java.net.URL;
  * Created by Equipo 2 on 03/11/2016.
  */
 
-public class tareaAsincronaArchivos extends AsyncTask<parametrosURL, Void, Bitmap> {
+public class TareaAsincronaArchivos extends AsyncTask<ParametrosURL, Void, Bitmap> {
 
     //Inicializa las variables
-    public respuestaAsincronaArchivos delegar = null;
+    public RespuestaAsincronaArchivos delegar = null;
     private ProgressDialog pDialog;
     private Context context;
 
     //Constructor
-    public tareaAsincronaArchivos(Context context)
+    public TareaAsincronaArchivos(Context context)
     {
         this.context = context;
         pDialog = new ProgressDialog(context);
@@ -39,7 +38,7 @@ public class tareaAsincronaArchivos extends AsyncTask<parametrosURL, Void, Bitma
     }
 
     @Override
-    protected Bitmap doInBackground(parametrosURL... parame) {
+    protected Bitmap doInBackground(ParametrosURL... parame) {
         Bitmap imagenCargada = null;
         URL imageUrl = null;
         try {

@@ -12,7 +12,6 @@ import android.widget.Toast;
 public class PrincipalMenu  extends AppCompatActivity implements OnClickListener {
 
     //Declaro variables
-    ///////////////////Button btnSalir;
     Button btnVerDossiers;
     Button btnVerLogros;
     Button btnVerPerfil;
@@ -29,14 +28,7 @@ public class PrincipalMenu  extends AppCompatActivity implements OnClickListener
         btnVerPerfil=(Button) findViewById(R.id.btnVerPerfil);
         lblBienvenido=(TextView) findViewById(R.id.lblBienvenido);
 
-        Intent intent = getIntent(); //Almacena el intent
-        Bundle extras = intent.getExtras(); //Extra enviado
-
-        if(extras != null){
-            String dato = extras.getString(constantes.USUARIO);
-            lblBienvenido.setText("Bienvenido " + dato + "!");
-            Toast.makeText(getApplicationContext(), extras.getString(constantes.USUARIO), Toast.LENGTH_LONG).show();
-        }
+        lblBienvenido.setText("Bienvenido " + Sesion.usuarioLogeado.getNombreUsuario() + "!");
 
         //(Escucha click)
         btnVerDossiers.setOnClickListener(this);

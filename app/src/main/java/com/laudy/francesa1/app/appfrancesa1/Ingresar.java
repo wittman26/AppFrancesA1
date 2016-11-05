@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.laudy.francesa1.app.appfrancesa1.DTO.Usuario;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +17,7 @@ import org.json.JSONObject;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Ingresar extends AppCompatActivity implements OnClickListener, respuestaAsincrona {
+public class Ingresar extends AppCompatActivity implements OnClickListener, RespuestaAsincrona {
 
     //Declaro variables
     Button btnIngresar;
@@ -52,7 +50,7 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, resp
             case R.id.btnIngresar:
                 if(validarCampos()) {
                     try {
-                        tareaAsincrona tarea = new tareaAsincrona(this);
+                        TareaAsincrona tarea = new TareaAsincrona(this);
                         tarea.delegar = this;
 
                         //Prepara los parámetros de envío
@@ -60,7 +58,7 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, resp
                         parame.put("usuario", txtUsuario.getText().toString());
                         parame.put("password", txtContrasena.getText().toString());
 
-                        parametrosURL params = new parametrosURL(constantes.LOGIN, parame);
+                        ParametrosURL params = new ParametrosURL(Constantes.LOGIN, parame);
                         tarea.execute(params);
                     } catch (Exception e) {
                         Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
@@ -90,19 +88,15 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, resp
             //Si se ha logeado correctamente
             if(exito.equals("1")){
 
-                Usuario usuarioLogeado = new Usuario();
                 //Leer array de JSON
                 JSONArray listaUsuario = new JSONArray(objetoJSON.getString("usuario"));
 
                 for (int i=0; i < listaUsuario.length(); i++) {
                     JSONObject objetoJSONusuario = listaUsuario.getJSONObject(i);
-                    usuarioLogeado.setNombreUsuario(objetoJSONusuario.getString("nombreusuario"));
-                    usuarioLogeado.setEmail(objetoJSONusuario.getString("email"));
+                    Sesion.usuarioLogeado.iniciarValores(objetoJSONusuario);
                 }
 
-                //Toast.makeText(this, "Bienvenido " + usuarioLogeado.getNombreUsuario(), Toast.LENGTH_LONG).show();
                 Intent intentPrincipalMenu = new Intent(this, PrincipalMenu.class);
-                intentPrincipalMenu.putExtra(constantes.USUARIO, usuarioLogeado.getNombreUsuario());
                 startActivity(intentPrincipalMenu);
 
             } else {

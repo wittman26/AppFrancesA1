@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Registrar extends AppCompatActivity implements OnClickListener,respuestaAsincrona {
+public class Registrar extends AppCompatActivity implements OnClickListener,RespuestaAsincrona {
 
     //Declaro variables
     Button btnIniciarSesion;
@@ -54,7 +54,7 @@ public class Registrar extends AppCompatActivity implements OnClickListener,resp
             case R.id.btnRegistrarReg:
                 if(validarCampos()){
                     try {
-                        tareaAsincrona tarea =new tareaAsincrona(this);
+                        TareaAsincrona tarea =new TareaAsincrona(this);
                         tarea.delegar = this;
 
                         //Prepara los parámetros de envío
@@ -63,7 +63,7 @@ public class Registrar extends AppCompatActivity implements OnClickListener,resp
                         parame.put("email",txtEmail.getText().toString());
                         parame.put("contrasena",txtContrasena.getText().toString());
 
-                        parametrosURL params = new parametrosURL(constantes.NUEVO_USUARIO,parame);
+                        ParametrosURL params = new ParametrosURL(Constantes.NUEVO_USUARIO,parame);
                         tarea.execute(params);
                     } catch (Exception e) {
                         Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();

@@ -80,7 +80,15 @@
         tools:background="#7be9ff"
         android:textColor="@color/colorPrimaryDark"
         />
-
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/siguiente"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/lblDossier3"
+        android:layout_alignParentRight="true"
+        android:id="@+id/imgSiguiente"/>
     <TextView
         android:id="@+id/lblActAprend1"
         android:text="@string/lblActAprend1"
@@ -92,6 +100,8 @@
         android:layout_marginTop="5dp"
         android:layout_below="@+id/lblDossier3"
         android:layout_alignParentStart="true" />
+
+
 
     <LinearLayout
         android:id="@+id/linBotonesPregunta"
@@ -119,7 +129,6 @@
             />
         <TextView
             android:id="@+id/lblInfo"
-            android:text="Muy bien!"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -140,7 +149,6 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:text="Esto es un texto mas largo aún que no se puede leer"
                     android:padding="7dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
@@ -153,7 +161,6 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:text="Esto es un texto mas largo aún que no se puede leer"
                     android:padding="7dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
@@ -166,7 +173,6 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:text="Esto es un texto mas largo aún que no se puede leer"
                     android:padding="7dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
@@ -179,7 +185,6 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:text="Esto es un texto mas largo aún que no se puede leer"
                     android:padding="7dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
@@ -190,12 +195,7 @@
                     android:id="@+id/btnRespuesta4" />
             </TableRow>
 
-
-
-
         </TableLayout>
-
-
 
     </LinearLayout>
 

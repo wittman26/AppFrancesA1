@@ -7,16 +7,16 @@ import java.util.TreeMap;
  * Created by Laudy on 29/10/2016.
  */
 /* PARAMETROS URL - Objeto genérico para enviar Url y parámetros de ser necesario */
-public class parametrosURL {
+public class ParametrosURL {
     private String url;
     private Map<String,String> params = new TreeMap<>();
 
-    public parametrosURL(String url,Map<String, String> params) {
+    public ParametrosURL(String url, Map<String, String> params) {
         this.params = params;
         this.url = url;
     }
 
-    public parametrosURL(String url) {
+    public ParametrosURL(String url) {
         this.url = url;
     }
 

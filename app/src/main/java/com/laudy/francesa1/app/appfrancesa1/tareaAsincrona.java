@@ -25,15 +25,15 @@ import javax.net.ssl.HttpsURLConnection;
 
 /* TAREA ASÍNCRONA - General para enviar y recibir datos
 Parametros, Progreso, Resultado */
-public class tareaAsincrona extends AsyncTask<parametrosURL, Void, String> {
+public class TareaAsincrona extends AsyncTask<ParametrosURL, Void, String> {
 
     //Inicializa las variables
-    public respuestaAsincrona delegar = null;
+    public RespuestaAsincrona delegar = null;
     private ProgressDialog pDialog;
     private Context context;
 
     //Constructor
-    public tareaAsincrona(Context context)
+    public TareaAsincrona(Context context)
     {
         this.context = context;
         pDialog = new ProgressDialog(context);
@@ -49,7 +49,7 @@ public class tareaAsincrona extends AsyncTask<parametrosURL, Void, String> {
     }
 
     @Override
-    protected String doInBackground(parametrosURL... parame) {
+    protected String doInBackground(ParametrosURL... parame) {
 
         String resultado = null;
         String url = null;

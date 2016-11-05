@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.laudy.francesa1.app.appfrancesa1.DTO.ActAprend;
@@ -19,14 +20,16 @@ import org.json.JSONObject;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class VerActAprend extends AppCompatActivity implements View.OnClickListener, respuestaAsincrona {
+public class VerActAprend extends AppCompatActivity implements View.OnClickListener, RespuestaAsincrona {
 
     //Declaro variables
-    ////////////////Button btnSalir;
     LinearLayout linBotonesActivi;
     Button btnVerLogros;
     Button btnVerDossiers;
     Button btnVerPerfil;
+    TextView lblDescripcionDossier;
+
+    private Map<Integer, ActAprend> actaprendMapa = new TreeMap<>();
 
     private String iddossier ="";
 
@@ -40,6 +43,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
         btnVerDossiers=(Button) findViewById(R.id.btnVerDossiers);
         btnVerPerfil=(Button) findViewById(R.id.btnVerPerfil);
         linBotonesActivi = (LinearLayout)findViewById(R.id.linBotonesActivi);
+        lblDescripcionDossier = (TextView)findViewById(R.id.lblDescripcionDossier);
 
         //(Escucha click)
         btnVerLogros.setOnClickListener(this);
@@ -49,24 +53,22 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
         //Recibe parámetros de pantalla anterior
         Intent intent = getIntent(); //Almacena el intent
         Bundle extras = intent.getExtras(); //Extra enviado
-//        String iddossier ="";
 
         if(extras != null){
-            iddossier = String.valueOf(extras.getInt(constantes.IDDOSSIER));
-//            Toast.makeText(getApplicationContext(), extras.getString(constantes.IDDOSSIER), Toast.LENGTH_LONG).show();
-            Toast.makeText(getApplicationContext(), "Recibió: " + extras.getString("prueba"), Toast.LENGTH_LONG).show();
+            iddossier = String.valueOf(extras.getInt(Constantes.IDDOSSIER));
+            lblDescripcionDossier.setText(extras.getString(Constantes.NOMBREDOSSIER));
         }
 
-        //Obtiene datos de la URL
+        //Prepara tarea para traer datos de Actividades
         try {
-            tareaAsincrona tareaActAprend = new tareaAsincrona(this);
+            TareaAsincrona tareaActAprend = new TareaAsincrona(this);
             tareaActAprend.delegar = this;
 
             //Prepara los parámetros de envío
             Map<String, String> parame = new TreeMap<>();
             parame.put("iddossier", iddossier);
 
-            parametrosURL params = new parametrosURL(constantes.ACTAPREND, parame);
+            ParametrosURL params = new ParametrosURL(Constantes.ACTAPREND, parame);
             tareaActAprend.execute(params);
         } catch (Exception e) {
             Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
@@ -118,9 +120,10 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
                 for (int i=0; i < listaActAprend.length(); i++) {
                     JSONObject objetoJSONActAprend = listaActAprend.getJSONObject(i);
 
-                    actAprend.setIdactaprend(Integer.parseInt(objetoJSONActAprend.getString("idactaprend")));
-                    actAprend.setNombreact(objetoJSONActAprend.getString("nombreact"));
-                    actAprend.setTipoactaprend(objetoJSONActAprend.getString("tipoactaprend"));
+                    actAprend.iniciarValores(objetoJSONActAprend);
+
+                    //Adiciona datos a mapa auxiliar//
+                    actaprendMapa.put(actAprend.getIdactaprend(),actAprend );
 
                     agregarBotonesActivi(actAprend);
                 }
@@ -140,10 +143,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT));
         //Se adiciona boton antes de dar estilos
-//        boton.setText(actAprend.getNombreact());
         linBotonesActivi.addView(boton);
-
-        boton.setTextColor(Color.parseColor("#330099"));
 
         //También se puede Color.WHITE
         boton.setTextColor(Color.rgb(51,0,153));
@@ -155,6 +155,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
         //izq,arriba,der,fondo
         lpt.setMargins(200,10,200,lpt.bottomMargin);
 
+        //Se coloca texto e Id al boton
         boton.setText(actAprend.getNombreact());
         boton.setId(actAprend.getIdactaprend());
 
@@ -163,11 +164,11 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v)
             {
-//                Toast.makeText(getApplicationContext(), " Listener botón " + v.getId(), Toast.LENGTH_SHORT).show();
                 Intent intentVerPreguntas = new Intent(v.getContext(), VerPreguntas.class);
-                intentVerPreguntas.putExtra(constantes.IDACTAPREND, v.getId());
-                intentVerPreguntas.putExtra(constantes.IDDOSSIER, iddossier);
-//                intentVerPreguntas.putExtra(constantes.USUARIO, usuarioLogeado.getNombreUsuario());
+//                intentVerPreguntas.putExtra(Constantes.IDACTAPREND, actaprendMapa.get(v.getId()).getIdactaprend());
+                intentVerPreguntas.putExtra(Constantes.IDACTAPREND, v.getId());
+                intentVerPreguntas.putExtra(Constantes.IDDOSSIER, iddossier);
+
                 startActivity(intentVerPreguntas);
             }
         });

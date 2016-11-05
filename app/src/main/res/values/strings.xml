@@ -55,6 +55,7 @@
     <string name="btnAct2">Activité deux</string>
     <string name="btnAct3">Activité trois</string>
     <string name="btnAct4">Activité quatre</string>
+    <string name="btnVerActAprend">Ver Actividades</string>
 
     <!--txt-->
     <string name="txtUsuario">Usuario</string>

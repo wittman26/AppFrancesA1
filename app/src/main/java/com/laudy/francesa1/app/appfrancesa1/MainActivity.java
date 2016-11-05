@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     //Declaro variables
     Button btnIniciarSesion;
     Button btnCrearPerfil;
-    String prueba = "ça été trés télè";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,8 @@
 package com.laudy.francesa1.app.appfrancesa1.DTO;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by Equipo 2 on 03/11/2016.
  */
@@ -9,6 +12,10 @@ public class Respuesta {
     private String descripcionr;
     private String rcorrecta;
     private int idactaprend;
+    // Nombre de campos en Base de datos entregados por PHP
+    public static final String IDRESPUESTA = "idrespuesta";
+    public static final String DESCRIPCIONR = "descripcionr";
+    public static final String RCORRECTA = "rcorrecta";
 
     public int getIdrespuesta() {
         return idrespuesta;
@@ -40,5 +47,15 @@ public class Respuesta {
 
     public void setIdactaprend(int idactaprend) {
         this.idactaprend = idactaprend;
+    }
+
+    public void iniciarValores(JSONObject objetoJSONRespuestas){
+        try {
+            setIdrespuesta(Integer.parseInt(objetoJSONRespuestas.getString(Respuesta.IDRESPUESTA)));
+            setDescripcionr(objetoJSONRespuestas.getString(Respuesta.DESCRIPCIONR));
+            setRcorrecta(objetoJSONRespuestas.getString(Respuesta.RCORRECTA));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
