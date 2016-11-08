@@ -97,10 +97,10 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
                 Intent intentVerPerfil = new Intent(this, VerPerfil.class);
                 startActivity(intentVerPerfil);
                 break;
-            case R.id.btnAct1:
+            /*case R.id.btnAct1:
                 Intent intentActiv1 = new Intent(this, VerPreguntas.class);
                 startActivity(intentActiv1);
-                break;
+                break;*/
         }
     }
 

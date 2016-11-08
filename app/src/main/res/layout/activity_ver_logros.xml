@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.laudy.francesa1.app.appfrancesa1.VerLogros"
-    android:background="@drawable/fondologros">
+    android:background="@drawable/registrar">
 
     <Button
         android:id="@+id/btnSalir"
@@ -72,131 +72,17 @@
         android:layout_toStartOf="@+id/btnVerDossiers"
         />
 
-    <TextView
-        android:id="@+id/lblPuntaje"
-        android:text="@string/lblPuntaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_alignBaseline="@+id/lblTituloLogros"
-        android:layout_alignBottom="@+id/lblTituloLogros"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="50dp"
-        />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lblTituloLogros">
+        <LinearLayout
+            android:id="@+id/linLogros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/lblPuntajeFalta"
-        android:text="@string/lblPuntajeFalta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblTituloLogros"
-        android:layout_alignStart="@+id/lblPuntaje"
-        android:layout_marginTop="10dp"
-        />
-
-    <TextView
-        android:id="@+id/lblPuntaje2"
-        android:text="@string/lblPuntaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntajeFalta"
-        android:layout_alignStart="@+id/lblPuntajeFalta"
-        android:layout_marginTop="40dp" />
-
-    <TextView
-        android:id="@+id/lblPuntajeFalta2"
-        android:text="@string/lblPuntajeFalta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntaje2"
-        android:layout_alignStart="@+id/lblPuntaje2"
-        android:layout_marginTop="10dp"
-        />
-
-    <TextView
-        android:id="@+id/lblPuntaje3"
-        android:text="@string/lblPuntaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntajeFalta"
-        android:layout_alignStart="@+id/lblPuntajeFalta"
-        android:layout_marginTop="130dp" />
-
-    <TextView
-        android:id="@+id/lblPuntajeFalta3"
-        android:text="@string/lblPuntajeFalta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntaje2"
-        android:layout_alignStart="@+id/lblPuntaje2"
-        android:layout_marginTop="100dp"
-        />
-
-    <TextView
-        android:id="@+id/lblPuntaje4"
-        android:text="@string/lblPuntaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntajeFalta"
-        android:layout_alignStart="@+id/lblPuntajeFalta"
-        android:layout_marginTop="210dp" />
-
-    <TextView
-        android:id="@+id/lblPuntajeFalta4"
-        android:text="@string/lblPuntajeFalta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntaje2"
-        android:layout_alignStart="@+id/lblPuntaje2"
-        android:layout_marginTop="180dp"
-        />
-
-    <TextView
-        android:id="@+id/lblPuntaje5"
-        android:text="@string/lblPuntaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntajeFalta"
-        android:layout_alignStart="@+id/lblPuntajeFalta"
-        android:layout_marginTop="290dp" />
-
-    <TextView
-        android:id="@+id/lblPuntajeFalta5"
-        android:text="@string/lblPuntajeFalta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="12sp"
-        android:textColor="#0066CC"
-        android:layout_below="@+id/lblPuntaje2"
-        android:layout_alignStart="@+id/lblPuntaje2"
-        android:layout_marginTop="260dp"
-        />
-
+        </LinearLayout>
+    </HorizontalScrollView>
 </RelativeLayout>

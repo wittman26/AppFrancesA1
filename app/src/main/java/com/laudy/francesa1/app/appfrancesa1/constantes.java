@@ -12,6 +12,7 @@ public class Constantes {
     public static final String ACTAPREND = SERVIDOR + "/actividades.php";
     public static final String PREGUNTAS = SERVIDOR + "/preguntas.php";
     public static final String GUARDAR = SERVIDOR + "/guardarpuntaje.php";
+    public static final String LOGROS = SERVIDOR + "/logros.php";
 
     public static final String IMAGENES = SERVIDOR + "/images/";
     //Nombre de parámetros

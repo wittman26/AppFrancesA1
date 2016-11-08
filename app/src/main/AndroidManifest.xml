@@ -54,11 +54,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".VerActAprend" />
-        <activity android:name=".DossierDos" />
-        <activity android:name=".DossierCuatro" />
-        <activity android:name=".DossierCinco" />
         <activity android:name=".VerPreguntas" />
-        <activity android:name=".DossierTres" />
         <activity android:name=".Ingresar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
