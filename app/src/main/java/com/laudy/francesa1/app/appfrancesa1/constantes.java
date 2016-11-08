@@ -1,11 +1,5 @@
 package com.laudy.francesa1.app.appfrancesa1;
 
-import com.laudy.francesa1.app.appfrancesa1.DTO.Dossier;
-import com.laudy.francesa1.app.appfrancesa1.DTO.Usuario;
-
-import java.util.Map;
-import java.util.TreeMap;
-
 /**
  * Created by Wittman on 29/10/2016.
  */
