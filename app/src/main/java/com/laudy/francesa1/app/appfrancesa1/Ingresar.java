@@ -1,14 +1,16 @@
 package com.laudy.francesa1.app.appfrancesa1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.laudy.francesa1.app.appfrancesa1.DTO.Usuario;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -93,6 +95,7 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, Resp
 
                 for (int i=0; i < listaUsuario.length(); i++) {
                     JSONObject objetoJSONusuario = listaUsuario.getJSONObject(i);
+                    Sesion.usuarioLogeado = new Usuario();
                     Sesion.usuarioLogeado.iniciarValores(objetoJSONusuario);
                 }
 

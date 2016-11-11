@@ -29,6 +29,7 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
     LinearLayout linLogros;
     Button btnVerDossiers;
     Button btnVerPerfil;
+    Button btnSalirLogros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +39,13 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
         //Mapeo (Prepara btn para escuchar click)
         btnVerDossiers=(Button) findViewById(R.id.btnVerDossiers);
         btnVerPerfil=(Button) findViewById(R.id.btnVerPerfil);
+        btnSalirLogros=(Button) findViewById(R.id.btnSalirLogros);
         linLogros = (LinearLayout)findViewById(R.id.linLogros);
 
         //(Escucha click)
         btnVerDossiers.setOnClickListener(this);
         btnVerPerfil.setOnClickListener(this);
+        btnSalirLogros.setOnClickListener(this);
 
         //Prepara tarea para traer datos de Logros
         try {
@@ -76,6 +79,12 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
                 Intent intentVerPerfil = new Intent(this, VerPerfil.class);
                 startActivity(intentVerPerfil);
                 break;
+            case R.id.btnSalirLogros:
+                Sesion.usuarioLogeado = null;
+                Intent intentSalir = new Intent(this, Ingresar.class);
+                intentSalir.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intentSalir);
+                break;
         }
     }
 
@@ -98,7 +107,6 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
                     logros.iniciarValores(objetoJSONLogros);
 
                     //Adiciona datos a mapa auxiliar//
-                    //actaprendMapa.put(actAprend.getIdactaprend(),actAprend );
 
                     agregarVista(logros);
                 }
@@ -119,14 +127,9 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT));
 
-        //Se adiciona linear antes de dar estilos
-//        linLogros.addView(linListaLogros);
-
         linListaLogros.setPadding(7,7,7,7); //izq,arr,der,aba
         linListaLogros.setOrientation(LinearLayout.VERTICAL);
         linListaLogros.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-
-        //linListaLogros.setId(logros.getIddossier());
 
         ImageView imgDossier = new ImageView(this);
         imgDossier.setLayoutParams(new LinearLayout.LayoutParams(
@@ -148,17 +151,8 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
 
-        //Se adicionan textos antes de dar estilos
-        /*linLogros.addView(lblDossier);
-        linLogros.addView(lblPuntajeAcum);
-        linLogros.addView(lblPuntajeMax);*/
-
-        //Se dan estilos a textos
-        /*lblDossier.setText(logros.getNombredossier());
-        lblPuntajeAcum.setText("Acumulado: " + logros.getPuntajeacumulado());
-        lblPuntajeMax.setText("Máximo: " + logros.getPuntajemaximo());*/
-
-        imgDossier.setBackgroundResource(R.drawable.d0a1_1);
+        //Se colocan propiedades de objetos adicionados
+        imgDossier.setBackgroundResource(R.drawable.d0a1_1); //Imagen medalla
 
         lblDossier.setTextColor(Color.rgb(51,0,153));
         lblDossier.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);//Tipo de unidad y cantidad
@@ -167,11 +161,6 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
         final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)lblDossier.getLayoutParams();
         //izq,arriba,der,fondo
         lpt.setMargins(0,10,0,0);
-
-        //lblDossier.setBackgroundResource(R.drawable.d0a1_1);
-        //final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)lblDossier.getLayoutParams();
-        //izq,arriba,der,fondo
-        //lpt.setMargins(10,200,10,10);
 
         lblPuntajeAcum.setTextColor(Color.rgb(20, 155, 10));
         lblPuntajeAcum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);//Tipo de unidad y cantidad
@@ -189,20 +178,12 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
         lblPuntajeMax.setText("Máximo: " + logros.getPuntajemaximo());
 
 
-
+        //Se agregan elementos en orden inverso a como aparecerán en pantalla
         linListaLogros.addView(lblPuntajeMax,0);
         linListaLogros.addView(lblPuntajeAcum,0);
         linListaLogros.addView(lblDossier,0);
         linListaLogros.addView(imgDossier,0);
 
         linLogros.addView(linListaLogros);
-
-
-        //Define las márgenes de los BotonesDossier
-        //final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)boton.getLayoutParams();
-        //izq,arriba,der,fondo
-        //lpt.setMargins(200,10,200,lpt.bottomMargin);
-
-
     }
 }

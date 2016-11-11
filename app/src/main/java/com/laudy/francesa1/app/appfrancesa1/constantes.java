@@ -8,6 +8,8 @@ public class Constantes {
     public static final String SERVIDOR = "http://laudyfrancesa1.eu5.org";
     public static final String LOGIN = SERVIDOR + "/login.php";
     public static final String NUEVO_USUARIO = SERVIDOR + "/nuevousuario.php";
+    public static final String ACTUALIZAR_USUARIO = SERVIDOR + "/actualizarusuario.php";
+    public static final String ELIMINAR_PERFIL = SERVIDOR + "/eliminarperfil.php";
     public static final String DOSSIERS = SERVIDOR + "/dossiers.php";
     public static final String ACTAPREND = SERVIDOR + "/actividades.php";
     public static final String PREGUNTAS = SERVIDOR + "/preguntas.php";

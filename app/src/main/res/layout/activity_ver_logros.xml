@@ -12,7 +12,7 @@
     android:background="@drawable/registrar">
 
     <Button
-        android:id="@+id/btnSalir"
+        android:id="@+id/btnSalirLogros"
         android:text="@string/btnSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

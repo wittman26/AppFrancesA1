@@ -33,7 +33,7 @@
         android:layout_marginBottom="35dp"
         android:textSize="17sp"
         android:textColor="#0066CC"
-        android:layout_above="@+id/lblContrasena"
+        android:layout_above="@+id/btnModificarPerfil"
         android:layout_alignStart="@+id/lblNombreUsuario" />
 
     <Button
@@ -58,18 +58,8 @@
         android:layout_marginBottom="44dp"
         android:textColor="#330099"
         android:layout_above="@+id/btnEliminarPerfil"
-        android:layout_alignEnd="@+id/lblContrasena" />
+        android:layout_alignEnd="@+id/lblEmail" />
 
-    <TextView
-        android:id="@+id/lblContrasena"
-        android:text="@string/lblContrasena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="39dp"
-        android:textSize="17sp"
-        android:textColor="#0066CC"
-        android:layout_above="@+id/btnModificarPerfil"
-        android:layout_alignStart="@+id/lblEmail" />
 
     <TextView
         android:id="@+id/lblNombreUsuario"

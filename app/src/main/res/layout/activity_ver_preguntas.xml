@@ -11,7 +11,7 @@
     android:background="@drawable/fondo">
 
     <Button
-        android:id="@+id/btnSalir"
+        android:id="@+id/btnSalirPreg"
         android:text="@string/btnSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         />
 
     <Button
-        android:id="@+id/btnVerLogros"
+        android:id="@+id/btnVerLogrosPreg"
         android:text="@string/btnVerLogros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

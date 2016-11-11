@@ -7,5 +7,5 @@ import com.laudy.francesa1.app.appfrancesa1.DTO.Usuario;
  */
 
 public class Sesion {
-    public static Usuario usuarioLogeado = new Usuario();
+    public static Usuario usuarioLogeado;
 }

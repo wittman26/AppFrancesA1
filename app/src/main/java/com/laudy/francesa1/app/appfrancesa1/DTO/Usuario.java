@@ -10,14 +10,25 @@ import org.json.JSONObject;
 public class Usuario {
     private String nombreUsuario;
     private String email;
+    private String contrasena;
 
     // Nombre de campos en Base de datos entregados por PHP
     public static final String NOMBREUSUARIO = "nombreusuario";
     public static final String EMAIL = "email";
+    public static final String CONTRASENA = "contrasena";
 
-    public Usuario(String nombreUsuario, String email) {
+    public Usuario(String nombreUsuario, String email, String contrasena) {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
+        this.contrasena = contrasena;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public Usuario() {
@@ -45,6 +56,7 @@ public class Usuario {
         try {
             setNombreUsuario(objetoJSONusuario.getString(Usuario.NOMBREUSUARIO));
             setEmail(objetoJSONusuario.getString(Usuario.EMAIL));
+            setContrasena(objetoJSONusuario.getString(Usuario.CONTRASENA));
         } catch (JSONException e) {
             e.printStackTrace();
         }

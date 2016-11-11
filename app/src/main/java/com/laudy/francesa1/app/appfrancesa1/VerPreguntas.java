@@ -34,6 +34,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
     private Button btnRespuesta4;
     private TextView lblInfo;
     private ImageButton imgSiguiente;
+    private Button btnSalirPreg;
 
     private List<Pregunta> preguntasActuales = new ArrayList<Pregunta>();
     private Pregunta preguntaActual = new Pregunta();
@@ -58,12 +59,15 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
         lblInfo = (TextView) findViewById(R.id.lblInfo);
         imgSiguiente = (ImageButton)findViewById(R.id.imgSiguiente);
 
+        btnSalirPreg =(Button) findViewById(R.id.btnSalirPreg);
+
         //(Escucha click)
         btnRespuesta1.setOnClickListener(this);
         btnRespuesta2.setOnClickListener(this);
         btnRespuesta3.setOnClickListener(this);
         btnRespuesta4.setOnClickListener(this);
         imgSiguiente.setOnClickListener(this);
+        btnSalirPreg.setOnClickListener(this);
 
         //Recibe parámetros de pantalla anterior
         Intent intent = getIntent(); //Almacena el intent
@@ -92,37 +96,51 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Button aux;
-        Button aux2;
-        if(v.getId()==R.id.imgSiguiente){
-            if(cont < preguntasActuales.size()-1) {
-                cargarPregunta(++cont);
-            } else {
-                Intent intentVerResultados = new Intent(v.getContext(), VerResultados.class);
-                intentVerResultados.putExtra(Constantes.IDACTAPREND, idactaprend);
-                intentVerResultados.putExtra(Constantes.IDDOSSIER, iddossier);
-                intentVerResultados.putExtra(Constantes.PUNTAJETOTAL, puntajeTotal);
-                intentVerResultados.putExtra(Constantes.PUNTAJEMAXIMO, puntajeMaximo);
 
-                startActivity(intentVerResultados);
-                finish();
-            }
-        } else {
-            aux = (Button) findViewById(v.getId());
-            aux2 = (Button) findViewById(correcta);
-            puntajeMaximo = puntajeMaximo + preguntaActual.getPuntaje();
-            if (correcta == v.getId()) {
-                lblInfo.setText(Constantes.BIEN);
-                lblInfo.setTextColor(Color.GREEN);
-                aux.setBackgroundColor(Color.GREEN);
-                puntajeTotal = puntajeTotal + preguntaActual.getPuntaje();
-            } else {
-                lblInfo.setText(Constantes.MAL);
-                lblInfo.setTextColor(Color.RED);
-                aux.setBackgroundColor(Color.RED);
-                aux2.setBackgroundColor(Color.GREEN);
-            }
-            habilitarBotones(false);
+        //Eventos de los btn
+        switch (v.getId()) {
+
+            //Evento btn Ver dossiers
+            case R.id.btnSalirPreg:
+                Sesion.usuarioLogeado = null;
+                Intent intentSalir = new Intent(this, Ingresar.class);
+                intentSalir.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intentSalir);
+                break;
+            default:
+                Button aux;
+                Button aux2;
+                if (v.getId() == R.id.imgSiguiente) {
+                    if (cont < preguntasActuales.size() - 1) {
+                        cargarPregunta(++cont);
+                    } else {
+                        Intent intentVerResultados = new Intent(v.getContext(), VerResultados.class);
+                        intentVerResultados.putExtra(Constantes.IDACTAPREND, idactaprend);
+                        intentVerResultados.putExtra(Constantes.IDDOSSIER, iddossier);
+                        intentVerResultados.putExtra(Constantes.PUNTAJETOTAL, puntajeTotal);
+                        intentVerResultados.putExtra(Constantes.PUNTAJEMAXIMO, puntajeMaximo);
+
+                        startActivity(intentVerResultados);
+                        finish();
+                    }
+                } else {
+                    aux = (Button) findViewById(v.getId());
+                    aux2 = (Button) findViewById(correcta);
+                    puntajeMaximo = puntajeMaximo + preguntaActual.getPuntaje();
+                    if (correcta == v.getId()) {
+                        lblInfo.setText(Constantes.BIEN);
+                        lblInfo.setTextColor(Color.GREEN);
+                        aux.setBackgroundColor(Color.GREEN);
+                        puntajeTotal = puntajeTotal + preguntaActual.getPuntaje();
+                    } else {
+                        lblInfo.setText(Constantes.MAL);
+                        lblInfo.setTextColor(Color.RED);
+                        aux.setBackgroundColor(Color.RED);
+                        aux2.setBackgroundColor(Color.GREEN);
+                    }
+                    habilitarBotones(false);
+                }
+                break;
         }
     }
 

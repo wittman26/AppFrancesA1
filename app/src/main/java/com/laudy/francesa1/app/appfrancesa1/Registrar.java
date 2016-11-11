@@ -24,6 +24,7 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
     EditText txtEmail;
     EditText txtContrasena;
     EditText txtConfirmarContrasena;
+    private String urlUsuario; //Guarda url para crear o actualizar usuario
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,20 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
         //(Escucha click)
         btnIniciarSesion.setOnClickListener(this);
         btnRegistrar.setOnClickListener(this);
+
+        txtNombreUsuario.setEnabled(true);
+
+        urlUsuario = Constantes.NUEVO_USUARIO;
+
+        //Si está logeado el usuario, va a modificar los datos
+        if(Sesion.usuarioLogeado != null){
+            urlUsuario = Constantes.ACTUALIZAR_USUARIO;
+            txtNombreUsuario.setEnabled(false);
+            txtNombreUsuario.setText(Sesion.usuarioLogeado.getNombreUsuario());
+            txtEmail.setText(Sesion.usuarioLogeado.getEmail());
+            txtContrasena.setText(Sesion.usuarioLogeado.getContrasena());
+            txtConfirmarContrasena.setText(Sesion.usuarioLogeado.getContrasena());
+        }
     }
 
     @Override
@@ -63,7 +78,7 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
                         parame.put("email",txtEmail.getText().toString());
                         parame.put("contrasena",txtContrasena.getText().toString());
 
-                        ParametrosURL params = new ParametrosURL(Constantes.NUEVO_USUARIO,parame);
+                        ParametrosURL params = new ParametrosURL(urlUsuario,parame);
                         tarea.execute(params);
                     } catch (Exception e) {
                         Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
@@ -97,9 +112,18 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
 
             //Si se ha logueado correctamente
             if(exito.equals("1")){
-                Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_LONG).show();
-                Intent intentIngresar = new Intent(this, Ingresar.class);
-                startActivity(intentIngresar);
+                //Si es actualización, refresca el objeto de sesión
+                if(Sesion.usuarioLogeado != null){
+                    Sesion.usuarioLogeado.setNombreUsuario(txtNombreUsuario.getText().toString());
+                    Sesion.usuarioLogeado.setEmail(txtEmail.getText().toString());
+                    Sesion.usuarioLogeado.setContrasena(txtContrasena.getText().toString());
+                    Toast.makeText(this, "Su perfil se ha modificado exitosamente", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_LONG).show();
+                    Intent intentIngresar = new Intent(this, Ingresar.class);
+                    startActivity(intentIngresar);
+                }
+
                 finish();
             } else {
                 Toast.makeText(this, objetoJSON.getString("message"), Toast.LENGTH_LONG).show();
