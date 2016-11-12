@@ -25,8 +25,8 @@
     <string name="lbltxtDossier3">Dis moi qui tu es</string>
     <string name="lbltxtDossier4">Une journée particuliere</string>
     <string name="lbltxtDossier5">activité un</string>
-    <string name="lblActAprend1">Activité 1</string>
-    <string name="lblActAprend11">Identifier un nombre</string>
+    <string name="lblTituloActAprend">Titre</string>
+    <string name="lblDescripcionPreg">Cochez la réponse correct</string>
     <string name="lbl17"> 17 </string>
     <string name="lbl5"> 5 </string>
     <string name="lblActAprend2">Activité 2</string>

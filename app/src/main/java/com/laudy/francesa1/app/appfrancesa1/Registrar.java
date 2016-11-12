@@ -110,7 +110,7 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
             JSONObject objetoJSON = new JSONObject(resultado);
             String exito= objetoJSON.getString("success");
 
-            //Si se ha logueado correctamente
+            //Si se ha creado correctamente
             if(exito.equals("1")){
                 //Si es actualización, refresca el objeto de sesión
                 if(Sesion.usuarioLogeado != null){
@@ -120,10 +120,9 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
                     Toast.makeText(this, "Su perfil se ha modificado exitosamente", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_LONG).show();
-                    Intent intentIngresar = new Intent(this, Ingresar.class);
-                    startActivity(intentIngresar);
                 }
-
+                Intent intentIngresar = new Intent(this, Ingresar.class);
+                startActivity(intentIngresar);
                 finish();
             } else {
                 Toast.makeText(this, objetoJSON.getString("message"), Toast.LENGTH_LONG).show();

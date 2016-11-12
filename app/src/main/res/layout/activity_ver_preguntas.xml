@@ -55,7 +55,7 @@
         tools:background="#2fc8d9"
         android:textColor="#330099"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btnVerLogros"
+        android:layout_toEndOf="@+id/btnVerLogrosPreg"
         />
 
     <TextView
@@ -71,71 +71,83 @@
         android:layout_alignParentStart="true"
         />
 
-    <Button
-        android:id="@+id/btnAtras"
-        android:text="@string/btnAtras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#7be9ff"
-        android:textColor="@color/colorPrimaryDark"
-        />
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/siguiente"
         android:background="@android:color/transparent"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="35dp"
         android:layout_below="@+id/lblDossier3"
         android:layout_alignParentRight="true"
         android:id="@+id/imgSiguiente"/>
     <TextView
-        android:id="@+id/lblActAprend1"
-        android:text="@string/lblActAprend1"
+        android:id="@+id/lblTituloActAprend"
+        android:text="@string/lblTituloActAprend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+
         android:textSize="17sp"
-        android:textColor="#0066CC"
-        android:layout_marginTop="5dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/lblDossier3"
         android:layout_alignParentStart="true" />
-
-
 
     <LinearLayout
         android:id="@+id/linBotonesPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:layout_below="@+id/lblActAprend1"
+        android:layout_below="@+id/lblTituloActAprend"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/lblActAprend11"
-            android:text="@string/lblActAprend11"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnAudio"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="17sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="16dp" />
+            android:layout_gravity="center"
+            android:background="@drawable/boton_audio" />
 
         <ImageView
             android:id="@+id/imgImagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             />
         <TextView
+            android:id="@+id/lblPreguntaTexto"
+            android:text="texto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textColor="#063563"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:id="@+id/lblDescripcionPreg"
+            android:text="@string/lblDescripcionPreg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="17sp"
+            android:textColor="#0066CC"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp" />
+        <TextView
             android:id="@+id/lblInfo"
+            android:text="Réponse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textSize="14sp"
             android:textColor="#129b2b"
             android:textStyle="bold"
-            android:layout_margin="8dp"
+            android:layout_margin="2dp"
             android:layout_below="@+id/btnSalir"
             android:layout_alignParentStart="true"
             />

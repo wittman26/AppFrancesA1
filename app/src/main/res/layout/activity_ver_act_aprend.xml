@@ -12,7 +12,7 @@
     android:background="@drawable/registrar">
 
     <Button
-        android:id="@+id/btnSalir"
+        android:id="@+id/btnSalirAct"
         android:text="@string/btnSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,21 +68,10 @@
         android:textSize="22sp"
         android:textColor="#0066CC"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/btnSalir"
+        android:layout_below="@+id/btnSalirAct"
         android:layout_alignParentStart="true"
         />
 
-
-
-    <Button
-        android:id="@+id/btnAtras"
-        android:text="@string/btnAtras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#7be9ff"
-        android:textColor="@color/colorPrimaryDark"
-        />
 
     <ScrollView
         android:layout_width="match_parent"

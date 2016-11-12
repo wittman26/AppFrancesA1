@@ -14,19 +14,19 @@ import java.net.URL;
  * Created by Equipo 2 on 03/11/2016.
  */
 
-public class TareaAsincronaArchivos extends AsyncTask<ParametrosURL, Void, Bitmap> {
+public class TareaAsincronaImagen extends AsyncTask<ParametrosURL, Void, Bitmap> {
 
     //Inicializa las variables
-    public RespuestaAsincronaArchivos delegar = null;
+    public RespuestaAsincronaImagen delegar = null;
     private ProgressDialog pDialog;
     private Context context;
 
     //Constructor
-    public TareaAsincronaArchivos(Context context)
+    public TareaAsincronaImagen(Context context)
     {
         this.context = context;
         pDialog = new ProgressDialog(context);
-        pDialog.setMessage("Cargando....");
+        pDialog.setMessage("Cargando imagen....");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
     }
@@ -56,6 +56,6 @@ public class TareaAsincronaArchivos extends AsyncTask<ParametrosURL, Void, Bitma
     @Override
     protected void onPostExecute(Bitmap s) {
         pDialog.dismiss();
-        delegar.traerResultadosArchivos(s);
+        delegar.traerResultadosImagen(s);
     }
 }

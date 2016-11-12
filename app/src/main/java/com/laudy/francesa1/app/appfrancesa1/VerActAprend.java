@@ -27,6 +27,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
     Button btnVerLogros;
     Button btnVerDossiers;
     Button btnVerPerfil;
+    Button btnSalirAct;
     TextView lblDescripcionDossier;
 
     private Map<Integer, ActAprend> actaprendMapa = new TreeMap<>();
@@ -42,6 +43,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
         btnVerLogros=(Button) findViewById(R.id.btnVerLogros);
         btnVerDossiers=(Button) findViewById(R.id.btnVerDossiers);
         btnVerPerfil=(Button) findViewById(R.id.btnVerPerfil);
+        btnSalirAct=(Button) findViewById(R.id.btnSalirAct);
         linBotonesActivi = (LinearLayout)findViewById(R.id.linBotonesActivi);
         lblDescripcionDossier = (TextView)findViewById(R.id.lblDescripcionDossier);
 
@@ -49,6 +51,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
         btnVerLogros.setOnClickListener(this);
         btnVerDossiers.setOnClickListener(this);
         btnVerPerfil.setOnClickListener(this);
+        btnSalirAct.setOnClickListener(this);
 
         //Recibe parámetros de pantalla anterior
         Intent intent = getIntent(); //Almacena el intent
@@ -97,10 +100,13 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
                 Intent intentVerPerfil = new Intent(this, VerPerfil.class);
                 startActivity(intentVerPerfil);
                 break;
-            /*case R.id.btnAct1:
-                Intent intentActiv1 = new Intent(this, VerPreguntas.class);
-                startActivity(intentActiv1);
-                break;*/
+            //Evento btn Salir
+            case R.id.btnSalirAct:
+                Sesion.usuarioLogeado = null;
+                Intent intentSalir = new Intent(this, Ingresar.class);
+                intentSalir.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intentSalir);
+                break;
         }
     }
 
@@ -129,7 +135,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
                 }
 
             } else {
-                Toast.makeText(this, "Ocurrió un error al obtener datos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Error al obtener datos: " + objetoJSON.getString("message"), Toast.LENGTH_LONG).show();
             }
 
         } catch (JSONException e) {
@@ -168,6 +174,7 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
 //                intentVerPreguntas.putExtra(Constantes.IDACTAPREND, actaprendMapa.get(v.getId()).getIdactaprend());
                 intentVerPreguntas.putExtra(Constantes.IDACTAPREND, v.getId());
                 intentVerPreguntas.putExtra(Constantes.IDDOSSIER, iddossier);
+                intentVerPreguntas.putExtra(Constantes.NOMBREACT, actaprendMapa.get(v.getId()).getNombreact());
 
                 startActivity(intentVerPreguntas);
             }

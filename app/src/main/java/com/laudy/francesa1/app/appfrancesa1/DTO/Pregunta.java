@@ -12,6 +12,7 @@ import java.util.List;
 public class Pregunta {
     private int idpregunta;
     private String descripcionp;
+    private String tipopregunta;
     private int puntaje;
     private int idactaprend;
     private List<Respuesta> respuestas;
@@ -19,6 +20,7 @@ public class Pregunta {
     // Nombre de campos en Base de datos entregados por PHP
     public static final String IDPREGUNTA = "idpregunta";
     public static final String DESCRIPCIONP = "descripcionp";
+    public static final String TIPOPREGUNTA = "tipopregunta";
     public static final String PUNTAJE = "puntaje";
     public static final String IDACTAPREND = "idactaprend";
 
@@ -63,10 +65,19 @@ public class Pregunta {
         this.respuestas = respuestas;
     }
 
+    public String getTipopregunta() {
+        return tipopregunta;
+    }
+
+    public void setTipopregunta(String tipopregunta) {
+        this.tipopregunta = tipopregunta;
+    }
+
     public void iniciarValores(JSONObject objetoJSONPreguntas){
         try {
             setIdpregunta(Integer.parseInt(objetoJSONPreguntas.getString(Pregunta.IDPREGUNTA)));
             setDescripcionp(objetoJSONPreguntas.getString(Pregunta.DESCRIPCIONP));
+            setTipopregunta(objetoJSONPreguntas.getString(Pregunta.TIPOPREGUNTA));
             setPuntaje(Integer.parseInt(objetoJSONPreguntas.getString(Pregunta.PUNTAJE)));
             setIdactaprend(Integer.parseInt(objetoJSONPreguntas.getString(Pregunta.IDACTAPREND)));
 
@@ -74,4 +85,6 @@ public class Pregunta {
             e.printStackTrace();
         }
     }
+
+
 }

@@ -89,7 +89,8 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, Resp
 
             //Si se ha logeado correctamente
             if(exito.equals("1")){
-
+                txtUsuario.setText("");
+                txtContrasena.setText("");
                 //Leer array de JSON
                 JSONArray listaUsuario = new JSONArray(objetoJSON.getString("usuario"));
 
@@ -103,7 +104,7 @@ public class Ingresar extends AppCompatActivity implements OnClickListener, Resp
                 startActivity(intentPrincipalMenu);
 
             } else {
-                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, Constantes.MALUSUARIO, Toast.LENGTH_LONG).show();
             }
 
         } catch (JSONException e) {

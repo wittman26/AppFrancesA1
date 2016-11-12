@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         style="@android:style/Widget.Button"
         tools:background="@android:color/holo_blue_light"
-        android:textColor="?attr/colorBackgroundFloating"
+        android:textColor="#330099"
         android:layout_marginBottom="86dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnModificarPerfil" />

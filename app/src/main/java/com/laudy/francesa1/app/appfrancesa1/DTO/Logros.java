@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by Wittman on 08/11/2016.
+ * Created by Laudy on 08/11/2016.
  */
 
 public class Logros {

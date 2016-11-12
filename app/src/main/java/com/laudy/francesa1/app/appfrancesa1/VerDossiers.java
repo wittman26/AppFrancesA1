@@ -25,6 +25,7 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
     LinearLayout linBotonesDossier;
     Button btnVerLogros;
     Button btnVerPerfil;
+    Button btnSalirDossier;
 
     private Map<Integer, Dossier> dossierMapa = new TreeMap<>();
 
@@ -37,10 +38,12 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
         linBotonesDossier = (LinearLayout) findViewById(R.id.linBotonesDossier);
         btnVerLogros =(Button) findViewById(R.id.btnVerLogros);
         btnVerPerfil =(Button) findViewById(R.id.btnVerPerfil);
+        btnSalirDossier =(Button) findViewById(R.id.btnSalirDossier);
 
         //(Escucha click)
         btnVerLogros.setOnClickListener(this);
         btnVerPerfil.setOnClickListener(this);
+        btnSalirDossier.setOnClickListener(this);
 
         //Prepara tarea para traer datos de Dossiers
         try {
@@ -73,6 +76,13 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
                 Intent intentVerPerfil = new Intent(this, VerPerfil.class);
                 startActivity(intentVerPerfil);
                 break;
+            //Evento btn Salir
+            case R.id.btnSalirDossier:
+                Sesion.usuarioLogeado = null;
+                Intent intentSalir = new Intent(this, Ingresar.class);
+                intentSalir.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intentSalir);
+                break;
 
         }
     }
@@ -103,7 +113,7 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
                 }
 
             } else {
-                Toast.makeText(this, "Ocurrió un error al obtener datos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Error al obtener datos: " + objetoJSON.getString("message"), Toast.LENGTH_LONG).show();
             }
 
         } catch (JSONException e) {

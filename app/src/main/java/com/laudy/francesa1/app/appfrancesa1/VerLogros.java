@@ -68,7 +68,6 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
 
         //Eventos de los btn
         switch (v.getId()){
-
             //Evento btn Ver dossiers
             case R.id.btnVerDossiers:
                 Intent intentVerDossiers = new Intent(this, VerDossiers.class);
@@ -106,13 +105,11 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
 
                     logros.iniciarValores(objetoJSONLogros);
 
-                    //Adiciona datos a mapa auxiliar//
-
                     agregarVista(logros);
                 }
 
             } else {
-                Toast.makeText(this, "Ocurrió un error al obtener datos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No hay datos para cargar", Toast.LENGTH_LONG).show();
             }
 
         } catch (JSONException e) {

@@ -1,13 +1,12 @@
 package com.laudy.francesa1.app.appfrancesa1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class PrincipalMenu  extends AppCompatActivity implements OnClickListener {
 
@@ -15,6 +14,7 @@ public class PrincipalMenu  extends AppCompatActivity implements OnClickListener
     Button btnVerDossiers;
     Button btnVerLogros;
     Button btnVerPerfil;
+    Button btnSalirMenu;
     TextView lblBienvenido;
 
     @Override
@@ -26,6 +26,7 @@ public class PrincipalMenu  extends AppCompatActivity implements OnClickListener
         btnVerDossiers=(Button) findViewById(R.id.btnVerDossiers);
         btnVerLogros=(Button) findViewById(R.id.btnVerLogros);
         btnVerPerfil=(Button) findViewById(R.id.btnVerPerfil);
+        btnSalirMenu=(Button) findViewById(R.id.btnSalirMenu);
         lblBienvenido=(TextView) findViewById(R.id.lblBienvenido);
 
         lblBienvenido.setText("Bienvenido " + Sesion.usuarioLogeado.getNombreUsuario() + "!");
@@ -34,6 +35,7 @@ public class PrincipalMenu  extends AppCompatActivity implements OnClickListener
         btnVerDossiers.setOnClickListener(this);
         btnVerLogros.setOnClickListener(this);
         btnVerPerfil.setOnClickListener(this);
+        btnSalirMenu.setOnClickListener(this);
     }
 
     @Override
@@ -56,6 +58,13 @@ public class PrincipalMenu  extends AppCompatActivity implements OnClickListener
             case R.id.btnVerPerfil:
                 Intent intentVerPerfil = new Intent(this, VerPerfil.class);
                 startActivity(intentVerPerfil);
+                break;
+            //Evento btn Salir
+            case R.id.btnSalirMenu:
+                Sesion.usuarioLogeado = null;
+                Intent intentSalir = new Intent(this, Ingresar.class);
+                intentSalir.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intentSalir);
                 break;
         }
     }
