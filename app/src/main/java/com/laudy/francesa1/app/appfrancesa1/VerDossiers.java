@@ -125,7 +125,8 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
     public void agregarBotonesDossier(Dossier dossier){
         Button boton = new Button(this);
         boton.setLayoutParams(new ViewGroup.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
+                //LinearLayout.LayoutParams.MATCH_PARENT,
+                170,
                 LinearLayout.LayoutParams.MATCH_PARENT));
 
         //Se adiciona boton antes de dar estilos
@@ -140,7 +141,8 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
         //Define las márgenes de los BotonesDossier
         final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)boton.getLayoutParams();
         //izq,arriba,der,fondo
-        lpt.setMargins(300,10,300,lpt.bottomMargin);
+        //lpt.setMargins(300,10,300,lpt.bottomMargin);
+        lpt.setMargins(0,10,0,0);
 
         //Se coloca texto e Id al boton
         boton.setText(dossier.getNombredossier());

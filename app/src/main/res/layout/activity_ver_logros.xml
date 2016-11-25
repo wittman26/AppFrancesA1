@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ver_logros"
     android:layout_width="match_parent"
@@ -8,41 +8,46 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="com.laudy.francesa1.app.appfrancesa1.VerLogros"
     android:background="@drawable/fondo">
 
-    <Button
-        android:id="@+id/btnSalirLogros"
-        android:text="@string/btnSalir"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/btnVerPerfil"
-        />
+    <LinearLayout
+        android:id="@+id/linBotonesArriba"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnVerLogros"
-        android:text="@string/btnVerLogros"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        />
+        <Button
+            android:id="@+id/btnVerLogros"
+            android:text="@string/btnVerLogros"
+            style="@style/botones_superior" />
+        <Button
+            android:id="@+id/btnVerDossiers"
+            android:text="@string/btnVerDossiers"
+            style="@style/botones_superior"
+            />
+        <Button
+            android:id="@+id/btnVerPerfil"
+            android:text="@string/btnVerPerfil"
+            style="@style/botones_superior"
+            />
+        <Button
+            android:id="@+id/btnSalirLogros"
+            android:text="@string/btnSalir"
+            style="@style/estilo_salir"
+            />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnVerPerfil"
-        android:text="@string/btnVerPerfil"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btnVerDossiers"
-        />
-
-    <Button
-        android:id="@+id/btnVerDossiers"
-        android:text="@string/btnVerDossiers"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btnVerLogros"
-        />
+    <TextView
+        android:id="@+id/lblTituloLogros"
+        android:text="@string/lblTituloLogros"
+        style="@style/titulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -58,14 +63,5 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <TextView
-        android:id="@+id/lblTituloLogros"
-        android:text="@string/lblTituloLogros"
-        style="@style/titulos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/btnVerPerfil"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+
+</LinearLayout>

@@ -148,7 +148,8 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
     public void agregarBotonesActivi(ActAprend actAprend){
         Button boton = new Button(this);
         boton.setLayoutParams(new ViewGroup.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
+                //LinearLayout.LayoutParams.MATCH_PARENT,
+                170,
                 LinearLayout.LayoutParams.MATCH_PARENT));
         //Se adiciona boton antes de dar estilos
         linBotonesActivi.addView(boton);
@@ -162,7 +163,8 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
         //Define las márgenes de los BotonesDossier
         final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)boton.getLayoutParams();
         //izq,arriba,der,fondo
-        lpt.setMargins(300,10,300,lpt.bottomMargin);
+        //lpt.setMargins(300,10,300,lpt.bottomMargin);
+        lpt.setMargins(0,10,0,0);
 
         //Se coloca texto e Id al boton
         boton.setText(actAprend.getNombreact());

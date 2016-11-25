@@ -7,5 +7,4 @@
     <item android:drawable="@drawable/iconosigui" />
     <item android:drawable="@drawable/iconosiguidisable"
         android:state_enabled="false" />
-
 </selector>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_dossier_tres"
     android:layout_width="match_parent"
@@ -8,71 +8,79 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:background="@drawable/fondo">
 
-    <Button
-        android:id="@+id/btnSalirPreg"
-        android:text="@string/btnSalir"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/btnVerPerfil"
-        />
-
-    <Button
-        android:id="@+id/btnVerLogrosPreg"
-        android:text="@string/btnVerLogros"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        />
-
-    <Button
-        android:id="@+id/btnVerPerfil"
-        android:text="@string/btnVerPerfil"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btnVerDossiers"
-        />
-
-    <Button
-        android:id="@+id/btnVerDossiers"
-        android:text="@string/btnVerDossiers"
-        style="@style/botones_superior"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btnVerLogrosPreg"
-        />
-
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/boton_siguiente"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/lblTituloDossier"
-        android:layout_alignParentRight="true"
-        android:id="@+id/imgSiguiente"/>
-    <TextView
-        android:id="@+id/lblTituloActAprend"
-        android:text="@string/lblTituloActAprend"
-        style="@style/titulos"
+    <LinearLayout
+        android:id="@+id/linBotonesArriba"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/lblTituloDossier"
-        android:layout_alignParentStart="true" />
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnVerLogrosPreg"
+            android:text="@string/btnVerLogros"
+            style="@style/botones_superior" />
+        <Button
+            android:id="@+id/btnVerDossiers"
+            android:text="@string/btnVerDossiers"
+            style="@style/botones_superior"
+            />
+        <Button
+            android:id="@+id/btnVerPerfil"
+            android:text="@string/btnVerPerfil"
+            style="@style/botones_superior"
+            />
+        <Button
+            android:id="@+id/btnSalirPreg"
+            android:text="@string/btnSalir"
+            style="@style/estilo_salir"
+            />
+    </LinearLayout>
+
 
     <LinearLayout
-        android:id="@+id/linBotonesPregunta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/lblTituloActAprend"
-        android:orientation="vertical">
-        <Button
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/lblTituloDossier"
+                android:text="@string/lblDossier1"
+                style="@style/titulos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/lblTituloActAprend"
+                android:text="@string/lblTituloActAprend"
+                style="@style/titulos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boton_siguiente"
+            android:background="@android:color/transparent"
+            android:id="@+id/imgSiguiente"
+            android:layout_weight="0"
+            />
+    </LinearLayout>
+
+
+    <Button
             android:id="@+id/btnAudio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,30 +92,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             />
-        <TextView
-            android:id="@+id/lblPreguntaTexto"
-            android:text="texto"
-            style="@style/texto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textColor="#063563"
-            android:textStyle="bold"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="8dp" />
-        <TextView
+
+    <TextView
+        android:id="@+id/lblPreguntaTexto"
+        android:text="texto"
+        style="@style/texto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="#063563"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp" />
+
+    <TextView
             android:id="@+id/lblDescripcionPreg"
             android:text="@string/lblDescripcionPreg"
             style="@style/texto"
+            android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginTop="5dp" />
         <TextView
             android:id="@+id/lblInfo"
             android:text="Réponse"
@@ -116,10 +123,10 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textColor="#129b2b"
-            android:textStyle="bold"
             android:layout_margin="2dp"
-            android:layout_below="@+id/btnSalir"
-            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
             />
         <TableLayout
             android:layout_width="wrap_content"
@@ -131,11 +138,13 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:padding="7dp"
+                    android:padding="5dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
+                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
                     android:layout_margin="2dp"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -144,11 +153,13 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:padding="7dp"
+                    android:padding="5dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
+                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
                     android:layout_margin="2dp"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -157,11 +168,13 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:padding="7dp"
+                    android:padding="5dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
+                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
                     android:layout_margin="2dp"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -170,11 +183,13 @@
             <TableRow
                 android:background="#8888d8">
                 <Button
-                    android:padding="7dp"
+                    android:padding="5dp"
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
+                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
                     android:layout_margin="2dp"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -183,16 +198,4 @@
 
         </TableLayout>
 
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/lblTituloDossier"
-        android:text="@string/lblDossier1"
-        style="@style/titulos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_below="@+id/btnSalirPreg"
-        android:layout_alignParentStart="true" />
-
-</RelativeLayout>
+</LinearLayout>

@@ -27,7 +27,7 @@
     <Button
         android:id="@+id/btnSalirMenu"
         android:text="@string/btnSalir"
-        style="@style/botones_superior"
+        style="@style/estilo_salir"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 

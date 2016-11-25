@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ingresar"
     android:layout_width="match_parent"
@@ -8,6 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.laudy.francesa1.app.appfrancesa1.Ingresar"
     android:background="@drawable/act1_fondo">
 
@@ -17,10 +19,18 @@
         style="@style/titulos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:textStyle="bold"
-        android:layout_alignStart="@+id/txtUsuario"
         />
+
+    <TextView
+        android:id="@+id/lblTextoIngresar"
+        android:text="@string/lblTextoIngresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="17sp"
+        android:textColor="#0066CC"
+        android:layout_marginTop="13dp"/>
 
     <EditText
         android:id="@+id/txtUsuario"
@@ -30,9 +40,7 @@
         android:textSize="16sp"
         tools:background="#CCFFFF"
         android:hint="@string/txtUsuario"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/txtContrasena"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
         />
 
     <EditText
@@ -44,8 +52,7 @@
         android:textSize="15sp"
         tools:background="#CCFFFF"
         android:hint="@string/txtContrasena"
-        android:layout_above="@+id/btnIngresar"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:inputType="textPassword"
         />
 
@@ -53,21 +60,9 @@
         android:id="@+id/btnIngresar"
         android:text="@string/btnIngresar"
         style="@style/botones"
-        android:layout_marginBottom="124dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         />
 
-    <TextView
-        android:id="@+id/lblTextoIngresar"
-        android:text="@string/lblTextoIngresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
-        android:textSize="17sp"
-        android:textColor="#0066CC"
-        android:layout_marginTop="63dp"
-        android:layout_below="@+id/lblTituloMain"
-        android:layout_alignParentStart="true" />
 
-</RelativeLayout>
+
+</LinearLayout>
