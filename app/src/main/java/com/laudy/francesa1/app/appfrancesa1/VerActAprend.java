@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -119,12 +120,13 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
             //Si se ha traido datos
             if(exito.equals("1")){
 
-                ActAprend actAprend = new ActAprend();
                 //Leer array de JSON de acuerdo al título arrojado por el php
                 JSONArray listaActAprend = new JSONArray(objetoJSON.getString("actividades"));
 
                 for (int i=0; i < listaActAprend.length(); i++) {
                     JSONObject objetoJSONActAprend = listaActAprend.getJSONObject(i);
+
+                    ActAprend actAprend = new ActAprend();
 
                     actAprend.iniciarValores(objetoJSONActAprend);
 
@@ -153,13 +155,14 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
 
         //También se puede Color.WHITE
         boton.setTextColor(Color.rgb(51,0,153));
-        boton.setBackgroundColor(Color.rgb(144,216,135));
-        boton.setTextSize(2,22);
+        boton.setBackgroundColor(Color.rgb(195, 255, 173));
+        //boton.setTextSize(2,22);
+        boton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);//Tipo de unidad y cantidad
 
         //Define las márgenes de los BotonesDossier
         final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)boton.getLayoutParams();
         //izq,arriba,der,fondo
-        lpt.setMargins(200,10,200,lpt.bottomMargin);
+        lpt.setMargins(300,10,300,lpt.bottomMargin);
 
         //Se coloca texto e Id al boton
         boton.setText(actAprend.getNombreact());
@@ -175,6 +178,8 @@ public class VerActAprend extends AppCompatActivity implements View.OnClickListe
                 intentVerPreguntas.putExtra(Constantes.IDACTAPREND, v.getId());
                 intentVerPreguntas.putExtra(Constantes.IDDOSSIER, iddossier);
                 intentVerPreguntas.putExtra(Constantes.NOMBREACT, actaprendMapa.get(v.getId()).getNombreact());
+                String baa = lblDescripcionDossier.getText().toString();
+                intentVerPreguntas.putExtra(Constantes.NOMBREDOSSIER,lblDescripcionDossier.getText().toString());
 
                 startActivity(intentVerPreguntas);
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_principal_menu"
     android:layout_width="match_parent"
@@ -8,45 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="right"
+    android:orientation="vertical"
     tools:context="com.laudy.francesa1.app.appfrancesa1.PrincipalMenu"
     android:background="@drawable/pantalla_principal">
-
-    <Button
-        android:id="@+id/btnVerLogros"
-        android:text="@string/btnVerLogros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/btnVerPerfil"
-        android:layout_alignStart="@+id/btnVerPerfil"
-        android:textColor="#330099"
-        />
-
-    <Button
-        android:id="@+id/btnVerDossiers"
-        android:text="@string/btnVerDossiers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/btnVerLogros"
-        android:layout_alignStart="@+id/btnVerLogros"
-        android:textColor="#330099"
-        />
-
-    <Button
-        android:id="@+id/btnSalirMenu"
-        android:text="@string/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:textColor="?attr/colorBackgroundFloating"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/lblBienvenido"
@@ -60,16 +25,33 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/btnVerPerfil"
-        android:text="@string/btnVerPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:layout_marginBottom="178dp"
-        android:textColor="#330099"
-        android:layout_marginEnd="22dp"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/btnSalirMenu"
+        android:text="@string/btnSalir"
+        style="@style/botones_superior"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnVerPerfil"
+        android:text="@string/btnVerPerfil"
+        style="@style/botones"
+        android:layout_marginTop="30dp"
+        android:textColor="#330099"
+        />
+
+    <Button
+        android:id="@+id/btnVerDossiers"
+        android:text="@string/btnVerDossiers"
+        style="@style/botones"
+        android:layout_marginTop="10dp"
+        android:textColor="#330099" />
+
+    <Button
+        android:id="@+id/btnVerLogros"
+        android:text="@string/btnVerLogros"
+        style="@style/botones"
+        android:layout_marginTop="10dp"
+        android:textColor="#330099"
+/>
+
+</LinearLayout>

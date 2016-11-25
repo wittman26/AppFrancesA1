@@ -9,28 +9,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.laudy.francesa1.app.appfrancesa1.VerActAprend"
-    android:background="@drawable/registrar">
+    android:background="@drawable/fondo">
 
     <Button
         android:id="@+id/btnSalirAct"
         android:text="@string/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#2fc8d9"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/btnVerPerfil"
         />
 
     <Button
         android:id="@+id/btnVerLogros"
         android:text="@string/btnVerLogros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         />
@@ -38,11 +31,7 @@
     <Button
         android:id="@+id/btnVerPerfil"
         android:text="@string/btnVerPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/btnVerDossiers"
         />
@@ -50,11 +39,7 @@
     <Button
         android:id="@+id/btnVerDossiers"
         android:text="@string/btnVerDossiers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#2fc8d9"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/btnVerLogros"
         />
@@ -62,11 +47,10 @@
     <TextView
         android:id="@+id/lblDescripcionDossier"
         android:text="@string/lblDossier1"
+        style="@style/titulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="22sp"
-        android:textColor="#0066CC"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/btnSalirAct"
         android:layout_alignParentStart="true"

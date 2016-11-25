@@ -38,24 +38,15 @@
     <string name="btnIniciarSesion">Iniciar Sesión</string>
     <string name="btnIngresar">Ingresar</string>
     <string name="btnRegistrar">Registrar</string>
-    <string name="btnVerDossiers">Ver Dossiers</string>
-    <string name="btnVerLogros">Ver Logros</string>
-    <string name="btnVerPerfil">Ver Perfil</string>
+    <string name="btnVerDossiers">Dossiers</string>
+    <string name="btnVerLogros">Logros</string>
+    <string name="btnVerPerfil">Perfil</string>
     <string name="btnSalir">Salir</string>
     <string name="btnModificarPerfil">Modificar Perfil</string>
     <string name="btnEliminarPerfil">Eliminar Perfil</string>
     <string name="btnAdelante">Adelante</string>
     <string name="btnAtras">Atrás</string>
-    <string name="btnDossier1">Dossier un</string>
-    <string name="btnDossier2">Dossier deux</string>
-    <string name="btnDossier3">Dossier trois</string>
-    <string name="btnDossier4">Dossier quatre</string>
-    <string name="btnDossier5">Dossier cinq</string>
-    <string name="btnAct1">Activité un</string>
-    <string name="btnAct2">Activité deux</string>
-    <string name="btnAct3">Activité trois</string>
-    <string name="btnAct4">Activité quatre</string>
-    <string name="btnVerActAprend">Ver Actividades</string>
+    <string name="btnVerActAprend">Actividades</string>
 
     <!--txt-->
     <string name="txtUsuario">Usuario</string>

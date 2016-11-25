@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -132,13 +133,14 @@ public class VerDossiers extends AppCompatActivity implements View.OnClickListen
 
         //También se puede Color.WHITE
         boton.setTextColor(Color.rgb(51,0,153));
-        boton.setBackgroundColor(Color.rgb(136,136,216));
-        boton.setTextSize(2,25);
+        boton.setBackgroundColor(Color.rgb(180, 180, 232));
+        //boton.setTextSize(2,25);
+        boton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);//Tipo de unidad y cantidad
 
         //Define las márgenes de los BotonesDossier
         final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)boton.getLayoutParams();
         //izq,arriba,der,fondo
-        lpt.setMargins(200,10,200,lpt.bottomMargin);
+        lpt.setMargins(300,10,300,lpt.bottomMargin);
 
         //Se coloca texto e Id al boton
         boton.setText(dossier.getNombredossier());

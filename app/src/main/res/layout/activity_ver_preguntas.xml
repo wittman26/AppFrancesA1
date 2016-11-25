@@ -13,23 +13,16 @@
     <Button
         android:id="@+id/btnSalirPreg"
         android:text="@string/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#2fc8d9"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/btnVerPerfil"
         />
 
     <Button
         android:id="@+id/btnVerLogrosPreg"
         android:text="@string/btnVerLogros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         />
@@ -37,11 +30,7 @@
     <Button
         android:id="@+id/btnVerPerfil"
         android:text="@string/btnVerPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/btnVerDossiers"
         />
@@ -49,56 +38,38 @@
     <Button
         android:id="@+id/btnVerDossiers"
         android:text="@string/btnVerDossiers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#2fc8d9"
-        android:textColor="#330099"
+        style="@style/botones_superior"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/btnVerLogrosPreg"
-        />
-
-    <TextView
-        android:id="@+id/lblDossier3"
-        android:text="@string/lblDossier1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="22sp"
-        android:textColor="#0066CC"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/btnSalir"
-        android:layout_alignParentStart="true"
         />
 
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/siguiente"
+        android:src="@drawable/boton_siguiente"
         android:background="@android:color/transparent"
         android:layout_marginTop="35dp"
-        android:layout_below="@+id/lblDossier3"
+        android:layout_below="@+id/lblTituloDossier"
         android:layout_alignParentRight="true"
         android:id="@+id/imgSiguiente"/>
     <TextView
         android:id="@+id/lblTituloActAprend"
         android:text="@string/lblTituloActAprend"
+        style="@style/titulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-
-        android:textSize="17sp"
         android:textColor="@color/colorPrimary"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/lblDossier3"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/lblTituloDossier"
         android:layout_alignParentStart="true" />
 
     <LinearLayout
         android:id="@+id/linBotonesPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/lblTituloActAprend"
         android:orientation="vertical">
         <Button
@@ -118,33 +89,32 @@
         <TextView
             android:id="@+id/lblPreguntaTexto"
             android:text="texto"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textSize="20sp"
             android:textColor="#063563"
             android:textStyle="bold"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="8dp" />
         <TextView
             android:id="@+id/lblDescripcionPreg"
             android:text="@string/lblDescripcionPreg"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textSize="17sp"
-            android:textColor="#0066CC"
             android:layout_alignParentStart="true"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp" />
         <TextView
             android:id="@+id/lblInfo"
             android:text="Réponse"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textSize="14sp"
             android:textColor="#129b2b"
             android:textStyle="bold"
             android:layout_margin="2dp"
@@ -165,6 +135,7 @@
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
                     android:layout_margin="2dp"
+                    android:textSize="20sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -177,6 +148,7 @@
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
                     android:layout_margin="2dp"
+                    android:textSize="20sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -189,6 +161,7 @@
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
                     android:layout_margin="2dp"
+                    android:textSize="20sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -201,6 +174,7 @@
                     style="@android:style/Widget.Button"
                     tools:background="@color/colorPrimaryDark"
                     android:layout_margin="2dp"
+                    android:textSize="20sp"
                     android:textColor="#330099"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -210,5 +184,15 @@
         </TableLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblTituloDossier"
+        android:text="@string/lblDossier1"
+        style="@style/titulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/btnSalirPreg"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -14,11 +14,10 @@
     <TextView
         android:id="@+id/lblTituloMain"
         android:text="@string/lblTituloMain"
+        style="@style/titulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="22sp"
-        android:textColor="#0066CC"
         android:layout_marginTop="13dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -26,25 +25,18 @@
     <Button
         android:id="@+id/btnCrearPerfilMain"
         android:text="@string/btnCrearPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
+        style="@style/botones"
         android:layout_marginBottom="20dp"
         android:layout_above="@+id/btnIniciarSesionMain"
         android:layout_alignStart="@+id/btnIniciarSesionMain"
-        android:textColor="#330099"
+        android:layout_centerHorizontal="true"
         />
 
     <Button
         android:id="@+id/btnIniciarSesionMain"
         android:text="@string/btnIniciarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
+        style="@style/botones"
         android:layout_marginBottom="81dp"
-        android:textColor="#330099"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         />

@@ -43,6 +43,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
     private Button btnRespuesta3;
     private Button btnRespuesta4;
     private TextView lblTituloActAprend;
+    private TextView lblTituloDossier;
     private TextView lblInfo;
     private ImageButton imgSiguiente;
     private Button btnSalirPreg;
@@ -56,6 +57,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
     private String iddossier="";
     private String idactaprend ="";
     private String urlAudio = "";
+    MediaPlayer mpAudio = null; //variable para reproducir audios
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
         btnRespuesta4 =(Button) findViewById(R.id.btnRespuesta4);
         lblInfo = (TextView) findViewById(R.id.lblInfo);
         lblTituloActAprend = (TextView) findViewById(R.id.lblTituloActAprend);
+        lblTituloDossier = (TextView) findViewById(R.id.lblTituloDossier);
         imgSiguiente = (ImageButton)findViewById(R.id.imgSiguiente);
 
         btnSalirPreg =(Button) findViewById(R.id.btnSalirPreg);
@@ -100,6 +103,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
             idactaprend = String.valueOf(extras.getInt(Constantes.IDACTAPREND));
             iddossier = extras.getString(Constantes.IDDOSSIER);
             lblTituloActAprend.setText(extras.getString(Constantes.NOMBREACT));
+            lblTituloDossier.setText(extras.getString(Constantes.NOMBREDOSSIER));
         }
 
         //Prepara tarea para traer datos de Preguntas
@@ -117,6 +121,14 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
             Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
         }
     }
+
+    /*@Override
+    public void onDestroy(){
+        if(mpAudio!=null) {
+            mpAudio.release();
+            mpAudio = null;
+        }
+    }*/
 
     //Muestra ventana de acuerdo al boton elegido
     void mostrarPantalla(int id){
@@ -145,7 +157,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
     //Antes de salir, pregunta confirmación
     void mostrarDialogo(final int idBtn){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Perder todos los avances realizados hasta ahora ¿´Seguro que desea salir?")
+        builder.setMessage("Perderá todos los avances realizados hasta ahora ¿Seguro que desea salir?")
                 .setTitle("Confirma salir")
                 .setCancelable(false)
                 .setNegativeButton("Cancelar",
@@ -190,7 +202,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
                 break;
             //Evento btn Reproducir audio
             case R.id.btnAudio:
-                MediaPlayer mpAudio =
+                mpAudio =
                         MediaPlayer.create(getApplicationContext(), Uri.parse(urlAudio));
                 mpAudio.start();
                 break;
@@ -235,6 +247,7 @@ public class VerPreguntas extends AppCompatActivity  implements View.OnClickList
 
                 break;
         }
+
     }
 
     @Override

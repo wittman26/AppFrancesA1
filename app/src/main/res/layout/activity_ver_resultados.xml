@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ver_resultados"
     android:layout_width="match_parent"
@@ -8,31 +8,43 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="com.laudy.francesa1.app.appfrancesa1.VerResultados"
-    android:background="@drawable/pantalla_principal">
+    android:background="@drawable/centro">
 
-    <LinearLayout
-        android:id="@+id/linBotonesPregunta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_below="@+id/lblActAprend1"
-        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnVerDossiersResu"
+            android:text="@string/btnVerDossiers"
+            style="@style/botones"
+            android:layout_margin="2dp"
+            android:textAlignment="center"
+            android:maxLines="2" />
+
+        <Button
+            android:id="@+id/btnVerActAprendResu"
+            android:text="@string/btnVerActAprend"
+            style="@style/botones"
+            android:layout_margin="2dp"
+            android:textAlignment="center"
+            android:maxLines="2" />
+
         <TextView
             android:id="@+id/lblResultados"
             android:text=" "
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textSize="17sp"
             android:textColor="@color/colorPrimary"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp" />
 
         <RatingBar
             android:id="@+id/rabResultado"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:scaleX="0.7"
             android:scaleY="0.7"
             android:numStars="6"
@@ -42,62 +54,22 @@
         <TextView
             android:id="@+id/lblPuntajeTotal"
             android:text="Puntaje"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textSize="14sp"
             android:textColor="#129b2b"
             android:textStyle="bold"
             android:layout_margin="8dp"
-            android:layout_below="@+id/btnSalir"
-            android:layout_alignParentStart="true"
             />
         <TextView
             android:id="@+id/lblMotiva"
             android:text="motivacion"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textSize="17sp"
-            android:textColor="#1844b2"
             android:textStyle="bold"
             android:layout_margin="8dp"
-            android:layout_below="@+id/btnSalir"
-            android:layout_alignParentStart="true"
             />
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#128675"
-            android:padding="2dp">
-
-            <TableRow
-                android:background="#8888d8">
-                <Button
-                    android:id="@+id/btnVerDossiersResu"
-                    android:text="@string/btnVerDossiers"
-                    android:padding="7dp"
-                    style="@android:style/Widget.Button"
-                    tools:background="@android:color/holo_blue_light"
-                    android:textColor="#330099"
-                    android:layout_margin="2dp"
-                    android:textAlignment="center"
-                    android:maxLines="2" />
-
-                <Button
-                    android:id="@+id/btnVerActAprendResu"
-                    android:text="@string/btnVerActAprend"
-                    android:padding="7dp"
-                    style="@android:style/Widget.Button"
-                    tools:background="@android:color/holo_blue_light"
-                    android:textColor="#330099"
-                    android:layout_margin="2dp"
-                    android:textAlignment="center"
-                    android:maxLines="2" />
-            </TableRow>
-
-        </TableLayout>
-
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

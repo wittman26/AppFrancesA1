@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_registrar"
     android:layout_width="match_parent"
@@ -8,75 +8,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.laudy.francesa1.app.appfrancesa1.Registrar"
-    android:background="@drawable/registrar">
-
-    <EditText
-        android:id="@+id/txtConfirmarContrasena"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:textColor="#330099"
-        android:textSize="16sp"
-        tools:background="#CCFFFF"
-        android:hint="@string/txtConfirmarContrasena"
-        android:layout_above="@+id/btnRegistrarReg"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="26dp"
-        android:inputType="textPassword"
-        />
-
-    <EditText
-        android:id="@+id/txtContrasenaReg"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="#330099"
-        android:textSize="16sp"
-        tools:background="#CCFFFF"
-        android:hint="@string/txtContrasena"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/txtConfirmarContrasena"
-        android:layout_alignStart="@+id/txtConfirmarContrasena"
-        android:inputType="textPassword"
-        />
-
-    <EditText
-        android:id="@+id/txtEmail"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="#330099"
-        android:textSize="16sp"
-        tools:background="#CCFFFF"
-        android:hint="@string/txtEmail"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/txtContrasenaReg"
-        android:layout_alignStart="@+id/txtContrasenaReg"
-        android:inputType="textEmailAddress"
-        />
-
-    <EditText
-        android:id="@+id/txtNombreUsuario"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="#330099"
-        android:textSize="16sp"
-        tools:background="#CCFFFF"
-        android:hint="@string/txtNombreUsuario"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/txtEmail"
-        android:layout_alignStart="@+id/txtEmail"
-        />
+    android:gravity="center_horizontal"
+    android:background="@drawable/fondo">
 
     <TextView
         android:id="@+id/lblRegistrar"
         android:text="@string/lblRegistrar"
+        style="@style/titulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="22sp"
-        android:textColor="#0066CC"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/lblTieneCuenta"
@@ -87,34 +30,46 @@
         android:textSize="15sp"
         android:textColor="#0066CC"
         android:layout_marginTop="36dp"
-        android:layout_below="@+id/lblRegistrar"
-        android:layout_toStartOf="@+id/btnRegistrarReg" />
+ />
 
     <Button
         android:id="@+id/btnIniciarSesionReg"
         android:text="@string/btnIniciarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="#7be9ff"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginLeft="26dp"
-        android:layout_marginRight="26dp"
-        android:layout_alignBaseline="@+id/lblTieneCuenta"
-        android:layout_alignBottom="@+id/lblTieneCuenta"
-        android:layout_alignEnd="@+id/txtNombreUsuario"
-        android:layout_marginEnd="18dp" />
+        style="@style/botones" />
+
+    <EditText
+        android:id="@+id/txtNombreUsuario"
+        android:hint="@string/txtNombreUsuario"
+        style="@style/textotxt"
+/>
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:hint="@string/txtEmail"
+        style="@style/textotxt"
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:id="@+id/txtContrasenaReg"
+        android:hint="@string/txtContrasena"
+        style="@style/textotxt"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/txtConfirmarContrasena"
+        style="@style/textotxt"
+        android:hint="@string/txtConfirmarContrasena"
+        android:inputType="textPassword"
+        />
 
     <Button
         android:id="@+id/btnRegistrarReg"
         android:text="@string/btnRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:layout_marginBottom="116dp"
-        android:textColor="#330099"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnIniciarSesionReg" />
+        style="@style/botones"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+         />
 
-</RelativeLayout>
+</LinearLayout>

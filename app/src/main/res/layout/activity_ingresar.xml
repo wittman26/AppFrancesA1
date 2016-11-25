@@ -11,6 +11,17 @@
     tools:context="com.laudy.francesa1.app.appfrancesa1.Ingresar"
     android:background="@drawable/act1_fondo">
 
+    <TextView
+        android:id="@+id/lblTituloMain"
+        android:text="@string/lblTituloMain"
+        style="@style/titulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_alignStart="@+id/txtUsuario"
+        />
+
     <EditText
         android:id="@+id/txtUsuario"
         android:layout_width="150dp"
@@ -21,7 +32,7 @@
         android:hint="@string/txtUsuario"
         android:layout_marginBottom="26dp"
         android:layout_above="@+id/txtContrasena"
-        android:layout_alignStart="@+id/txtContrasena"
+        android:layout_centerHorizontal="true"
         />
 
     <EditText
@@ -30,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:textColor="#330099"
-        android:textSize="16sp"
+        android:textSize="15sp"
         tools:background="#CCFFFF"
         android:hint="@string/txtContrasena"
         android:layout_above="@+id/btnIngresar"
@@ -38,16 +49,13 @@
         android:inputType="textPassword"
         />
 
-
-    <TextView
-        android:id="@+id/lblTituloMain"
-        android:text="@string/lblTituloMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="22sp"
-        android:textColor="#0066CC"
-        android:layout_alignStart="@+id/txtUsuario"
+    <Button
+        android:id="@+id/btnIngresar"
+        android:text="@string/btnIngresar"
+        style="@style/botones"
+        android:layout_marginBottom="124dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         />
 
     <TextView
@@ -55,24 +63,11 @@
         android:text="@string/lblTextoIngresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:gravity="center_horizontal|center_vertical"
         android:textSize="17sp"
         android:textColor="#0066CC"
-        android:layout_marginTop="64dp"
-        android:layout_alignParentStart="true"
-        />
-
-    <Button
-        android:id="@+id/btnIngresar"
-        android:text="@string/btnIngresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.Button"
-        tools:background="@android:color/holo_blue_light"
-        android:layout_marginBottom="124dp"
-        android:textColor="#330099"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/lblTituloMain"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

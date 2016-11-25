@@ -149,25 +149,25 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
                 LinearLayout.LayoutParams.WRAP_CONTENT));
 
         //Se colocan propiedades de objetos adicionados
-        imgDossier.setBackgroundResource(R.drawable.d0a1_1); //Imagen medalla
+        imgDossier.setBackgroundResource(R.drawable.medalla); //Imagen medalla
 
-        lblDossier.setTextColor(Color.rgb(51,0,153));
+        lblDossier.setTextColor(Color.rgb(0, 102, 204));
         lblDossier.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);//Tipo de unidad y cantidad
         lblDossier.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         lblDossier.setPadding(10,10,10,10);
         final ViewGroup.MarginLayoutParams lpt =(ViewGroup.MarginLayoutParams)lblDossier.getLayoutParams();
         //izq,arriba,der,fondo
-        lpt.setMargins(0,10,0,0);
+        lpt.setMargins(0,20,0,0);
 
-        lblPuntajeAcum.setTextColor(Color.rgb(20, 155, 10));
-        lblPuntajeAcum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);//Tipo de unidad y cantidad
+        lblPuntajeAcum.setTextColor(Color.rgb(95, 175, 24));
+        lblPuntajeAcum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);//Tipo de unidad y cantidad
         lblPuntajeAcum.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         final ViewGroup.MarginLayoutParams lpt2 =(ViewGroup.MarginLayoutParams)lblPuntajeAcum.getLayoutParams();
         //izq,arriba,der,fondo
-        lpt2.setMargins(0,32,0,0);
+        lpt2.setMargins(0,42,0,0);
 
-        lblPuntajeMax.setTextColor(Color.rgb(20, 155, 10));
-        lblPuntajeMax.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);//Tipo de unidad y cantidad
+        lblPuntajeMax.setTextColor(Color.rgb(112, 24, 175));
+        lblPuntajeMax.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);//Tipo de unidad y cantidad
         lblPuntajeMax.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
 
         lblDossier.setText(logros.getNombredossier());
