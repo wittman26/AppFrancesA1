@@ -29,7 +29,7 @@ public class PrincipalMenu  extends AppCompatActivity implements OnClickListener
         btnSalirMenu=(Button) findViewById(R.id.btnSalirMenu);
         lblBienvenido=(TextView) findViewById(R.id.lblBienvenido);
 
-        lblBienvenido.setText("Bienvenido " + Sesion.usuarioLogeado.getNombreUsuario() + "!");
+        lblBienvenido.setText("Bienvenido " + Sesion.usuarioLogeado.getNombreUsuario().toUpperCase() + "!");
 
         //(Escucha click)
         btnVerDossiers.setOnClickListener(this);

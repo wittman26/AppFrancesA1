@@ -40,15 +40,15 @@
     <EditText
         android:id="@+id/txtNombreUsuario"
         android:hint="@string/txtNombreUsuario"
+        android:digits="0,1,2,3,4,5,6,7,8,9,*,qwertzuiopasdfghjklyxcvbnm,QWERTZUIOPASDFGHJKLYXCVBNM,_,-"
         style="@style/textotxt"
-/>
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:hint="@string/txtEmail"
         style="@style/textotxt"
-        android:inputType="textEmailAddress"
-        />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/txtContrasenaReg"

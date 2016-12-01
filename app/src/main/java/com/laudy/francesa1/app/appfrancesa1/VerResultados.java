@@ -77,7 +77,7 @@ public class VerResultados extends AppCompatActivity implements View.OnClickList
         float resultado = ((float)  puntajeTotal/ (float) puntajeMaximo ) * 6f;
         rabResultado.setRating(resultado);
 
-        String usuario = Sesion.usuarioLogeado.getNombreUsuario();
+        String usuario = Sesion.usuarioLogeado.getNombreUsuario().toUpperCase();
         lblResultados.setText(usuario + ". Estos son tus resultados");
         lblPuntajeTotal.setText("Obtuviste " + puntajeTotal + "pts. de " + puntajeMaximo + " posibles");
 

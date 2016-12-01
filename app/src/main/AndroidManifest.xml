@@ -54,7 +54,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".VerActAprend" />
-        <activity android:name=".VerPreguntas" />
+        <activity android:name=".VerPreguntas"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".Ingresar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

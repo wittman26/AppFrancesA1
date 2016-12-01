@@ -54,7 +54,7 @@ public class VerLogros extends AppCompatActivity implements View.OnClickListener
 
             //Prepara los parámetros de envío
             Map<String, String> parame = new TreeMap<>();
-            parame.put("nombreusuario", Sesion.usuarioLogeado.getNombreUsuario());
+            parame.put("nombreusuario", Sesion.usuarioLogeado.getNombreUsuario().toUpperCase());
 
             ParametrosURL params = new ParametrosURL(Constantes.LOGROS, parame);
             tareaVerLogros.execute(params);

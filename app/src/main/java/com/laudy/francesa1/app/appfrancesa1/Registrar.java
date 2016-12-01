@@ -92,16 +92,39 @@ public class Registrar extends AppCompatActivity implements OnClickListener,Resp
     }
     private boolean validarCampos(){
         boolean resultado = true;
-        if(txtNombreUsuario.getText().length()==0) {txtNombreUsuario.setError("Ingrese nombre de usuario");resultado=false;}
-        if(txtEmail.getText().length()==0) {txtEmail.setError("Ingrese email");resultado=false;}
-        if(txtContrasena.getText().length()==0) {txtContrasena.setError("Ingrese nombre la contraseña");resultado=false;}
-        if(txtConfirmarContrasena.getText().length()==0) {txtConfirmarContrasena.setError("Confirme la contraseña");resultado=false;}
-
+        if(txtNombreUsuario.getText().length()==0) {
+            txtNombreUsuario.setError("Ingrese nombre de usuario");
+            resultado=false;
+        }
+        if(txtEmail.getText().length()==0) {
+            txtEmail.setError("Ingrese email");
+            resultado=false;
+        } else {
+            if(!validarEmail(txtEmail.getText())){
+                txtEmail.setError("Email incorrecto");
+                resultado=false;
+            }
+        }
+        if(txtContrasena.getText().length()==0) {
+            txtContrasena.setError("Ingrese nombre la contraseña");
+            resultado=false;
+        }
+        if(txtConfirmarContrasena.getText().length()==0) {
+            txtConfirmarContrasena.setError("Confirme la contraseña");
+            resultado=false;
+        }
         if(!txtContrasena.getText().toString().equals(txtConfirmarContrasena.getText().toString())){
             txtConfirmarContrasena.setError("Las contraseñas no coinciden");
             resultado=false;
         }
         return resultado;
+    }
+
+    public final static boolean validarEmail(CharSequence target) {
+        if (target == null)
+            return false;
+
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
     @Override

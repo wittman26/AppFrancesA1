@@ -55,6 +55,7 @@
             android:id="@+id/lblPuntajeTotal"
             android:text="Puntaje"
             style="@style/texto"
+            android:textSize="17dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
